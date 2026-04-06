@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-A-P | Renta de Rompedoras y Vibradores de Concreto</title>
+    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg) y vibradores en Monterrey, Guadalupe, Juárez y Apodaca. Equipos de alta potencia, mantenimiento garantizado y entrega puntual.">
+    
+    <style>
+        /* ESTILO CATERPILLAR: Amarillo (#FFCD00), Negro (#000000) */
+        body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
+        
+        header { 
+            background: #FFCD00; 
+            text-align: center; 
+            padding: 0; /* Eliminado para que el logo toque los bordes */
+            border-bottom: 8px solid #000; 
+        }
+        .logo-container {
+            display: block; /* Bloque completo */
+            padding: 0;
+            background: #FFCD00;
+        }
+        /* Ajuste de Logotipo para llenar el ancho y alto del recuadro */
+        .header-logo-img {
+            width: 100%; /* Ocupa todo el ancho */
+            height: auto; /* Altura proporcional */
+            max-height: 250px; /* Límite de altura para estética */
+            object-fit: cover; /* Asegura que llene el espacio asignado */
+            display: block;
+            margin: 0;
+            filter: none; /* Color original */
+        }
+        /* Textos ocultos para eliminar sobrantes */
+        .logo-main, .subtitulo-header { display: none; }
+
+        /* SECCIÓN SOBRE NOSOTROS */
+        .nosotros { background: #000; color: #fff; padding: 50px 20px; text-align: center; }
+        .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
+        .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
+
+        /* SECCIÓN DE MARCAS */
+        .marcas-container {
+            background: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #FFCD00;
+        }
+        .marcas-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .marca-logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .logo-makita { color: #CC0000; }
+        .logo-dewalt { color: #FEB81C; text-shadow: 1px 1px 0 #000; }
+        .logo-bosch  { color: #DA291C; }
+        .logo-edoevom { color: #D2051E; }
+
+        /* VALORES DE LA EMPRESA */
+        .distintivo-gap { 
+            background: #f4f4f4; 
+            padding: 40px 20px; 
+            text-align: center; 
+            border-bottom: 2px solid #ddd;
+        }
+        .distintivo-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        .valor-box { padding: 20px; }
+        .valor-box h3 { color: #000; text-transform: uppercase; font-size: 1.2em; margin-bottom: 10px; border-bottom: 3px solid #FFCD00; display: inline-block; }
+        .valor-box p { font-family: 'Arial', sans-serif; font-size: 0.95em; color: #444; }
+
+        /* CATÁLOGO DE EQUIPOS */
+        .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
+        .titulo-seccion { text-align: center; margin-bottom: 50px; text-transform: uppercase; font-size: 32px; border-left: 10px solid #FFCD00; padding-left: 15px; display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .card { border: 4px solid #000; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
+        .card:hover { border-color: #FFCD00; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-8px); }
+        
+        .card-img {
+            width: 100%;
+            height: 300px; 
+            object-fit: contain; 
+            border-bottom: 4px solid #000;
+            background: #fdfdfd; 
+        }
+
+        .card-header-vibrador {
+            background: repeating-linear-gradient(45deg, #FFCD00, #FFCD00 10px, #e6b800 10px, #e6b800 20px);
+            color: #000; padding: 20px; text-align: center; border-bottom: 5px solid #000;
+        }
+
+        .card-header-kg { background: #000; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
+        .card-header-kg .modelo-txt { display: block; font-size: 1.5em; font-weight: 900; text-transform: uppercase; }
+        
+        .card-specs-bar { background: #FFCD00; color: #000; padding: 12px; text-align: center; font-weight: 900; font-size: 1.2em; border-bottom: 3px solid #000; }
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
+        
+        .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-size: 1em; color: #000; flex-grow: 1; font-weight: bold; }
+        .ideal-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .icon-usage { color: #fff; background: #000; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 0.8em; }
+        
+        .btn-rentar { display: block; background: #000; color: #FFCD00; text-align: center; padding: 20px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2em; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-rentar:hover { background: #FFCD00; color: #000; }
+        .btn-rentar:active { transform: scale(0.95); }
+
+        .footer-info { background: #000; color: #fff; padding: 60px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; border-top: 8px solid #FFCD00; }
+        .info-box h4 { border-bottom: 4px solid #FFCD00; color: #FFCD00; display: inline-block; padding-bottom: 8px; text-transform: uppercase; font-size: 22px; margin-bottom: 20px; }
+        .info-box p { font-family: 'Arial', sans-serif; margin: 12px 0; font-size: 18px; font-weight: bold; }
+        .horario-domingo { color: #FFCD00; }
+
+        .ws-flotante {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .ws-flotante:hover { transform: scale(1.1); background-color: #128C7E; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logotipo.jpg" alt="Logo GAP" class="header-logo-img">
+        </div>
+    </header>
+
+    <section class="nosotros">
+        <h2>Especialistas en Equipo Ligero</h2>
+        <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey. Ofrecemos equipos de demolición y vibrado de alta eficiencia con mantenimiento garantizado para que tu obra nunca se detenga.</p>
+    </section>
+
+    <section class="marcas-container">
+        <div class="marcas-grid">
+            <span class="marca-logo logo-makita">Makita</span>
+            <span class="marca-logo logo-dewalt">DeWalt</span>
+            <span class="marca-logo logo-bosch">Bosch</span>
+            <span class="marca-logo logo-edoevom">edoevom</span>
+        </div>
+    </section>
+
+    <section class="distintivo-gap">
+        <div class="distintivo-grid">
+            <div class="valor-box">
+                <h3>Potencia Real</h3>
+                <p>Equipos de marcas líderes como Makita, Bosch y DeWalt que aseguran el mejor rendimiento por Joule de impacto.</p>
+            </div>
+            <div class="valor-box">
+                <h3>Cero Fallas</h3>
+                <p>Mantenimiento preventivo riguroso en cada entrega para evitar paros innecesarios en tu construcción.</p>
+            </div>
+            <div class="valor-box">
+                <h3>Logística Local</h3>
+                <p>Entregas puntuales en toda el área metropolitana, optimizadas para que el equipo llegue cuando lo necesitas.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="seccion-equipos">
+        <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
+                <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
+                <div class="card-specs-bar">720 Watts | 6 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Orificios con broca</li>
+                        <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
+                <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
+                <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
+                        <li><span class="icon-usage">GAP</span> Demolición media</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Cotizar Ahora</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
+                <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
+                <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Muros y vigas</li>
+                        <li><span class="icon-usage">GAP</span> Contra cimientos</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
+                <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
+                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
+                        <li><span class="icon-usage">GAP</span> Losas de concreto</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
+                <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
+                <div class="card-specs-bar">2100 Watts | 70 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
+                        <li><span class="icon-usage">GAP</span> Zapatas y drenaje</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header-vibrador"><span class="modelo-txt" style="font-weight: 900; font-size: 1.5em; text-transform: uppercase;">Vibrador Eléctrico</span></div>
+                <img src="Vibrador.jpg" alt="Vibrador de Concreto" class="card-img">
+                <div class="card-specs-bar">Alta Frecuencia</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Compactación de colados</li>
+                        <li><span class="icon-usage">GAP</span> Acabado profesional sin burbujas</li>
+                    </ul>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Consultar Disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-info">
+        <div class="info-box">
+            <h4>Horarios de Atención</h4>
+            <p>Lunes a Viernes: 8:00 am - 8:00 pm</p>
+            <p>Sábado: 9:00 am - 5:00 pm</p>
+            <p class="horario-domingo">Domingo: 9:00 am - 2:00 pm</p>
+        </div>
+        <div class="info-box">
+            <h4>Zonas de Cobertura</h4>
+            <p>Juárez | Guadalupe | Apodaca</p>
+            <p>San Nicolás | Monterrey</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/528119988053" class="ws-flotante" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="25" alt="WhatsApp Icon">
+        811-998-80-53
+    </a>
+
+</body>
+</html>
