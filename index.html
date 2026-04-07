@@ -261,5 +261,53 @@
         811-998-80-53
     </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. WHATSAPP INTELIGENTE: Personaliza el mensaje según el equipo seleccionado
+            const rentButtons = document.querySelectorAll('.btn-rentar');
+            
+            rentButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const card = btn.closest('.card');
+                    const equipoNombre = card.querySelector('.modelo-txt').innerText;
+                    const telefono = "528119988053";
+                    
+                    // Texto dinámico para facilitar la venta
+                    const mensaje = encodeURIComponent(`Hola G-A-P, me interesa rentar el equipo: ${equipoNombre}. ¿Me podrían dar informes de disponibilidad?`);
+                    const urlWhatsapp = `https://wa.me/${telefono}?text=${mensaje}`;
+                    
+                    window.open(urlWhatsapp, '_blank');
+                });
+            });
+
+            // 2. EFECTO SCROLL REVEAL: Las tarjetas aparecen con estilo al bajar
+            const cards = document.querySelectorAll('.card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearanceObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                // Estado inicial invisible
+                card.style.opacity = "0";
+                card.style.transform = "translateY(30px)";
+                card.style.transition = "all 0.6s ease-out";
+                appearanceObserver.observe(card);
+            });
+        });
+    </script>
+
 </body>
 </html>
