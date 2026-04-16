@@ -48,41 +48,13 @@
         
         .card { border: 4px solid #002752; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; transform: translateY(-8px); }
-        
-        /* Contenedor de imagen estándar */
         .card-img { width: 100%; height: 280px; object-fit: contain; border-bottom: 4px solid #FFCD00; background: #fdfdfd; }
         
-        /* CORRECCIÓN DE ENFOQUE Y MARGEN PARA IMÁGENES GIRADAS (Tipo Pistola) */
-        .img-container-pistola { 
-            height: 280px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            background: #fdfdfd; 
-            border-bottom: 4px solid #FFCD00;
-            overflow: hidden; /* Asegura que no se salga de los márgenes */
-        }
-        
-        .img-pistola { 
-            transform: rotate(90deg); 
-            /* Al rotar, ajustamos nítidamente al contenedor */
-            width: auto !important; 
-            height: 90% !important; /* Ligeramente más pequeña para dar aire a los márgenes */
-            max-width: 280px; 
-            object-fit: contain !important; 
-            image-rendering: auto; /* Asegura nitidez */
-        }
-
         .disponibilidad-txt { background: #f8f8f8; color: #d9534f; font-size: 10px; text-align: center; padding: 5px; font-family: sans-serif; border-bottom: 1px solid #eee; }
 
         .card-header-kg { background: #333; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #002752; }
         .card-header-vibrador { background: #002752; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
-        
         .modelo-txt { font-weight: 900; font-size: 1.3em; text-transform: uppercase; }
-        
-        /* Etiqueta de tipo taladro */
-        .tag-taladro { font-size: 0.7em; color: #fff; margin-top: 5px; background: #002752; display: inline-block; padding: 3px 10px; border-radius: 15px; border: 1px solid #FFCD00; }
-
         .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
         
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
@@ -93,7 +65,6 @@
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
         .btn-cotizar:hover { background: #001a38; }
 
-        /* MODAL (Igual) */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
         .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; }
         .modal-content input { width: 100%; padding: 12px; margin: 8px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
@@ -153,101 +124,76 @@
             <strong>AVISO IMPORTANTE:</strong> Al rentar, el responsable acepta que el equipo sea entregado por cualquier persona en el domicilio al terminar el plazo.
         </div>
         
-        <p class="nota-variacion">*Las imágenes son ilustrativas. El color, marca y orientación del equipo pueden variar dependiendo de la disponibilidad.</p>
+        <p class="nota-variacion">*Las imágenes son ilustrativas. El color y marca del equipo pueden variar dependiendo de la disponibilidad.</p>
 
         <div class="grid">
             <div class="card">
-                <div class="card-header-kg">
-                    <span class="modelo-txt">Rompedora de 8 KG</span><br>
-                    <span class="tag-taladro">TIPO TALADRO</span>
-                </div>
-                <div class="img-container-pistola">
-                    <img src="8.jpg" alt="Rompedora 8kg" class="img-pistola">
-                </div>
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
+                <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-specs-bar">720 Watts | 6 Joules</div>
+                <div class="card-specs-bar">Tipo Taladro | 720W | 6J</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 8kg (Taladro)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 8kg (Tipo Taladro)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg">
-                    <span class="modelo-txt">Rompedora de 12 KG (V1)</span><br>
-                    <span class="tag-taladro">TIPO TALADRO</span>
-                </div>
-                <div class="img-container-pistola">
-                    <img src="12.jpg" alt="Rompedora 12kg" class="img-pistola">
-                </div>
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V1)</span></div>
+                <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="card-specs-bar">Tipo Taladro | 960W | 12J</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V1 (Taladro)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V1 (Tipo Taladro)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg">
-                    <span class="modelo-txt">Rompedora de 12 KG (V2)</span><br>
-                    <span class="tag-taladro">TIPO TALADRO</span>
-                </div>
-                <div class="img-container-pistola">
-                    <img src="12.1.jpg" alt="Rompedora 12.1kg" class="img-pistola">
-                </div>
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V2)</span></div>
+                <img src="12.1.jpg" alt="Rompedora 12.1kg" class="card-img">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-specs-bar">960 Watts | 12 Joules</div>
+                <div class="card-specs-bar">Tipo Taladro | 960W | 12J</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Alto impacto</li>
                         <li><span class="icon-usage">GAP</span> Uso continuo</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V2 (Taladro)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V2 (Tipo Taladro)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg">
-                    <span class="modelo-txt">Rompedora de 15 KG (V1)</span><br>
-                    <span class="tag-taladro">TIPO TALADRO</span>
-                </div>
-                <div class="img-container-pistola">
-                    <img src="15.jpg" alt="Rompedora 15kg" class="img-pistola">
-                </div>
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V1)</span></div>
+                <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="card-specs-bar">Tipo Taladro | 1200W | 25J</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V1 (Taladro)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V1 (Tipo Taladro)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg">
-                    <span class="modelo-txt">Rompedora de 15 KG (V2)</span><br>
-                    <span class="tag-taladro">TIPO TALADRO</span>
-                </div>
-                <div class="img-container-pistola">
-                    <img src="15.1.jpg" alt="Rompedora 15.1kg" class="img-pistola">
-                </div>
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V2)</span></div>
+                <img src="15.1.jpg" alt="Rompedora 15.1kg" class="card-img">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-specs-bar">1200 Watts | 25 Joules</div>
+                <div class="card-specs-bar">Tipo Taladro | 1200W | 25J</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Cimientos reforzados</li>
                         <li><span class="icon-usage">GAP</span> Máximo poder</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V2 (Taladro)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V2 (Tipo Taladro)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
