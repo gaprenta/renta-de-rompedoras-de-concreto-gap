@@ -1,174 +1,30 @@
-<!DOCTYPE html>
-<html lang="es-MX">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Soluciones Profesionales en Demolición</title>
-    
-    <style>
-        body { font-family: 'Arial Black', sans-serif; margin: 0; background: #fff; color: #000; }
-        header { background: #FFCD00; border-bottom: 8px solid #002752; text-align: center; }
-        .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
-        
-        .hero { background: #002752; color: #fff; padding: 40px 20px; text-align: center; }
-        .hero h2 { color: #FFCD00; margin: 0 0 10px 0; text-transform: uppercase; font-size: 28px; }
-        .hero p { margin: 0; font-size: 18px; font-family: 'Arial', sans-serif; font-weight: bold; }
-
-        .cotizador-container { max-width: 650px; margin: 40px auto; background: #f4f4f4; border: 5px solid #FFCD00; padding: 25px; border-radius: 15px; font-family: 'Arial', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 2px solid #002752; border-radius: 5px; font-weight: bold; box-sizing: border-box; font-size: 14px; }
-        
-        .zona-status { background: #002752; color: #FFCD00; padding: 10px; border-radius: 5px; font-size: 12px; margin-top: 5px; font-weight: bold; text-align: center; transition: 0.3s; }
-
-        .btn-calcular { width: 100%; background: #000; color: #FFCD00; padding: 20px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 18px; }
-        
-        #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #002752; display: none; border-radius: 10px; }
-        
-        .botones-confirmar { display: flex; gap: 10px; margin-top: 15px; }
-        .btn-confirmar { flex: 1; background: #25D366; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 5px; font-weight: bold; }
-        .btn-rechazar { flex: 1; background: #FF3B30; color: white; padding: 15px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
-
-        .seccion-equipos { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { border: 4px solid #002752; display: flex; flex-direction: column; text-align: center; background: #fff; }
-        .card img { width: 100%; height: 230px; object-fit: contain; background: #f9f9f9; border-bottom: 4px solid #FFCD00; }
-        .card h4 { background: #002752; color: #FFCD00; margin: 0; padding: 15px; text-transform: uppercase; }
-        .card p { font-family: 'Arial', sans-serif; padding: 15px; font-size: 14px; font-weight: bold; flex-grow: 1; }
-        .btn-ir-cotizar { background: #FFCD00; color: #000; padding: 10px; text-decoration: none; font-weight: bold; display: block; border-top: 2px solid #002752; }
-
-        footer { background: #000; color: #fff; padding: 40px 20px; text-align: center; border-top: 8px solid #FFCD00; margin-top: 50px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: left; font-family: 'Arial', sans-serif; }
-        .footer-item h3 { color: #FFCD00; text-transform: uppercase; margin-bottom: 15px; border-left: 4px solid #FFCD00; padding-left: 10px; }
-    </style>
-</head>
-<body>
-
-<header><img src="logotipo1.png" alt="G-A-P Renta de Rompedoras" class="header-logo-img"></header>
-
-<section class="hero">
-    <h2>Líderes en Renta de Rompedoras y Vibradores de Concreto</h2>
-    <p>Maquinaria Profesional para Construcción. Equipos Listos para su Obra.</p>
-</section>
-
-<div class="cotizador-container" id="form-pedidos">
-    <div class="form-group">
-        <label>Nombre del Cliente:</label>
-        <input type="text" id="nombre" placeholder="Nombre completo">
-    </div>
-
-    <div class="form-group">
-        <label>Dirección exacta (Calle y Número):</label>
-        <input type="text" id="direccion" placeholder="Ej. Calle Pino #123">
-    </div>
-
-    <div class="form-group">
-        <label>Colonia o Sector:</label>
-        <input type="text" id="coloniaInput" placeholder="Ej. Valle Sur, La Pastora, Huinalá..." onkeyup="detectarZona()">
-        <div id="infoZona" class="zona-status">Escriba su colonia para validar flete...</div>
-    </div>
-
-    <div class="form-group">
-        <label>Teléfono de Contacto:</label>
-        <input type="tel" id="telefono" placeholder="WhatsApp a 10 dígitos">
-    </div>
-
-    <div class="form-group">
-        <label>Equipo que necesita:</label>
-        <select id="equipo">
-            <option value="300">Rompedora 8kg</option>
-            <option value="300">Rompedora 12kg</option>
-            <option value="350">Rompedora 15kg</option>
-            <option value="400">Rompedora 25kg</option>
-            <option value="450">Rompedora 27kg</option>
-            <option value="300">Vibrador Eléctrico CAT</option>
-            <option value="300">Vibrador V1 (Portátil)</option>
-            <option value="200">Vibrador V2</option>
-            <option value="200">Vibrador V3</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label>Días de renta:</label>
-        <input type="number" id="dias" value="1" min="1">
-    </div>
-
-    <input type="hidden" id="costoFlete" value="350">
-    <input type="hidden" id="nombreZona" value="No identificada">
-
-    <button class="btn-calcular" onclick="mostrarResumen()">Calcular Presupuesto</button>
-
-    <div id="res-box">
-        <h3 style="margin:0; text-transform:uppercase; color:#002752;">Confirmación de Pedido</h3>
-        <p id="res-detalles" style="line-height:1.6;"></p>
-        <hr>
-        <h2 style="margin:0; color:#002752;">TOTAL A PAGAR: $<span id="res-total"></span></h2>
-        
-        <div class="botones-confirmar">
-            <a href="#" id="wa-link" class="btn-confirmar" target="_blank">ACEPTAR Y ENVIAR</a>
-            <button class="btn-rechazar" onclick="rechazarPedido()">RECHAZAR</button>
-        </div>
-    </div>
-</div>
-
-<section class="seccion-equipos">
-    <h2 style="text-align:center; text-transform:uppercase;">Maquinaria Disponible</h2>
-    <div class="grid">
-        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Demolición ligera y ranurado.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Retiro de pisos y azulejos.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para concreto reforzado.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Uso rudo en banquetas y firmes.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Poder industrial para asfalto.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Compactación profunda de concreto.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Diseño compacto y eficiente.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Reforzado para uso continuo.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Alta frecuencia para acabados.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-grid">
-        <div class="footer-item">
-            <h3>G-A-P Renta de Rompedoras</h3>
-            <p>Soluciones integrales de maquinaria. Puntualidad y equipos en excelente estado.</p>
-        </div>
-        <div class="footer-item">
-            <h3>Horarios</h3>
-            <p>Lun-Vie: 8AM-8PM | Sab: 9AM-5PM | Dom: 9AM-2PM</p>
-        </div>
-        <div class="footer-item">
-            <h3>Ubicación</h3>
-            <p>Base Valle Sur, Juárez, Nuevo León.<br>WhatsApp: 8119988053</p>
-        </div>
-    </div>
-</footer>
-
 <script>
-    // BASE DE DATOS EXTENDIDA DE COLONIAS POR MUNICIPIO
+    // BASE DE DATOS REFINADA POR PERÍMETROS DESDE VALLE SUR
     const baseZonas = [
         { 
-            palabras: ["valle sur", "san roque", "santa monica", "anzures", "juarez", "acueducto", "villas de san jose", "los puertos", "lomas de juarez", "mirador del parque", "palo blanco", "terranova", "ex hacienda", "juarez centro", "valle real", "montecristal", "la trinidad"], 
-            zona: "Juárez (Zona Local)", costo: 200 
+            // PERÍMETRO 1: VECINOS DIRECTOS (COSTO MÍNIMO)
+            palabras: ["valle sur", "san roque", "santa monica", "anzures", "villas de san jose", "mirador del parque", "palo blanco", "terranova", "ex hacienda", "juarez centro", "valle real", "montecristal", "la trinidad", "real de juarez", "acueducto", "los puertos", "lomas de juarez"], 
+            zona: "Juárez Local (Zona Base)", costo: 200 
         },
         { 
-            palabras: ["tres caminos", "coahuila", "xochimilco", "dos rios", "el porvenir", "paseo gpe", "eloy cavazos", "villas de san miguel", "faisanes", "balcones de san miguel", "rancho viejo", "azueta", "guadalupe centro"], 
+            // PERÍMETRO 2: GUADALUPE ORIENTE (CERCANÍA MEDIA)
+            palabras: ["tres caminos", "coahuila", "xochimilco", "dos rios", "el porvenir", "paseo gpe", "eloy cavazos", "villas de san miguel", "faisanes", "balcones de san miguel", "rancho viejo", "azueta", "guadalupe centro", "pablo livas", "valles de guadalupe"], 
             zona: "Guadalupe Oriente", costo: 250 
         },
         { 
-            palabras: ["la pastora", "vivienda popular", "expo", "estadio", "tolteca", "lindavista", "contry", "la silla", "santa maria", "san sebastian", "pablo livas", "valles de guadalupe", "residencial azteca"], 
-            zona: "Guadalupe Poniente", costo: 350 
+            // PERÍMETRO 3: CENTRO DE GPE / LINDAVISTA
+            palabras: ["la pastora", "vivienda popular", "expo", "estadio", "tolteca", "lindavista", "contry", "la silla", "santa maria", "san sebastian", "residencial azteca", "huinala", "pueblo nuevo"], 
+            zona: "Guadalupe Poniente / Apodaca Sur", costo: 300 
         },
         { 
-            palabras: ["huinala", "pueblo nuevo", "centro de apodaca", "la fe", "santa rosa", "margaritas", "alameda", "ebano", "concordia", "metroplex", "encarnacion", "moises saenz", "mirasol", "paseo de las flores"], 
-            zona: "Apodaca / San Nicolás Este", costo: 400 
+            // PERÍMETRO 4: ÁREA METROPOLITANA INTERMEDIA
+            palabras: ["centro de apodaca", "la fe", "santa rosa", "margaritas", "alameda", "ebano", "concordia", "metroplex", "encarnacion", "moises saenz", "mirasol", "paseo de las flores", "san nicolas center", "las puentes", "universidad", "anahuac", "cuauhtemoc", "sendero"], 
+            zona: "San Nicolás / Apodaca Norte", costo: 400 
         },
         { 
-            palabras: ["mty centro", "zona tec", "obispado", "mitras", "san bernabe", "solidaridad", "san nicolas center", "las puentes", "universidad", "anahuac", "cuauhtemoc", "sendero", "barrio"], 
-            zona: "Monterrey Centro / San Nicolás", costo: 450 
-        },
-        { 
-            palabras: ["cumbres", "san jeronimo", "santa catarina", "garcia", "dominio", "san pedro", "valle oriente", "la estanzuela", "carretera nacional", "el uro", "santiago", "escobedo", "puerta de hierro"], 
-            zona: "Zona Periferia Extendida", costo: 550 
+            // PERÍMETRO 5: ZONAS RETIRADAS (CUMBRES / SAN PEDRO / GARCÍA)
+            palabras: ["mty centro", "zona tec", "obispado", "mitras", "san bernabe", "solidaridad", "cumbres", "san jeronimo", "santa catarina", "garcia", "dominio", "san pedro", "valle oriente", "la estanzuela", "carretera nacional", "el uro", "santiago", "escobedo", "puerta de hierro"], 
+            zona: "Zona Periferia (Larga Distancia)", costo: 550 
         }
     ];
 
@@ -180,82 +36,42 @@
         
         let zonaEncontrada = null;
 
-        if (input.length > 2) {
-            for (let z of baseZonas) {
-                for (let p of z.palabras) {
-                    if (input.includes(p)) {
-                        zonaEncontrada = z;
-                        break;
-                    }
+        // Si el cliente no ha escrito nada o escribe muy poco, 
+        // asumimos que es de la zona local para no mostrar flete alto de inicio.
+        if (input.length < 3) {
+            infoZona.innerText = "Escriba su colonia para validar flete...";
+            infoZona.style.background = "#002752";
+            infoZona.style.color = "#FFCD00";
+            fleteInput.value = 200; // Flete inicial justo
+            nombreZonaInput.value = "Juárez Local";
+            return;
+        }
+
+        // Buscador de coincidencias en la base de datos
+        for (let z of baseZonas) {
+            for (let p of z.palabras) {
+                if (input.includes(p)) {
+                    zonaEncontrada = z;
+                    break;
                 }
             }
+            if (zonaEncontrada) break;
         }
 
         if (zonaEncontrada) {
-            infoZona.innerText = "✓ Ubicación Identificada: Logística Lista";
+            infoZona.innerText = "✓ Cobertura Confirmada en " + zonaEncontrada.zona;
             infoZona.style.background = "#25D366"; 
             infoZona.style.color = "#fff";
             fleteInput.value = zonaEncontrada.costo;
             nombreZonaInput.value = zonaEncontrada.zona;
         } else {
-            infoZona.innerText = "Validando cobertura...";
-            infoZona.style.background = "#002752";
-            infoZona.style.color = "#FFCD00";
-            fleteInput.value = 350; 
+            // Si la colonia no está en la lista pero el cliente ya escribió, 
+            // ponemos un flete promedio razonable.
+            infoZona.innerText = "Calculando logística para sector nuevo...";
+            infoZona.style.background = "#FFCD00";
+            infoZona.style.color = "#000";
+            fleteInput.value = 300; 
             nombreZonaInput.value = "Zona General";
         }
     }
-
-    function mostrarResumen() {
-        const nom = document.getElementById('nombre').value;
-        const dir = document.getElementById('direccion').value;
-        const col = document.getElementById('coloniaInput').value;
-        const tel = document.getElementById('telefono').value;
-        const flete = parseFloat(document.getElementById('costoFlete').value);
-        const zonaDet = document.getElementById('nombreZona').value;
-        const d = parseInt(document.getElementById('dias').value);
-        const eSelect = document.getElementById('equipo');
-        const eNom = eSelect.options[eSelect.selectedIndex].text;
-        
-        if(!nom || !col || !dir) {
-            alert("Por favor completa los campos de Nombre, Dirección y Colonia.");
-            return;
-        }
-
-        const costoRentaIndividual = parseFloat(eSelect.value);
-        const rentaTotal = costoRentaIndividual * d;
-        const total = rentaTotal + flete;
-
-        document.getElementById('res-detalles').innerHTML = `
-            <b>Cliente:</b> ${nom}<br>
-            <b>Ubicación:</b> ${col}<br>
-            <b>Equipo:</b> ${eNom}<br>
-            <b>Tiempo:</b> ${d} día(s)<br>
-            <b>Servicio:</b> Entrega a domicilio incluida.
-        `;
-        document.getElementById('res-total').innerText = total;
-        document.getElementById('res-box').style.display = 'block';
-
-        const mensajeWA = `*PEDIDO DE RENTA G-A-P*\n\n` +
-            `*Cliente:* ${nom}\n` +
-            `*Teléfono:* ${tel}\n` +
-            `*Dirección:* ${dir}\n` +
-            `*Colonia:* ${col}\n` +
-            `*Zona:* ${zonaDet}\n` +
-            `*Equipo:* ${eNom}\n` +
-            `*Días:* ${d}\n` +
-            `--------------------------\n` +
-            `*TOTAL NETO: $${total}*`;
-
-        document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
-        window.location.hash = '#res-box';
-    }
-
-    function rechazarPedido() {
-        document.getElementById('res-box').style.display = 'none';
-        alert("Cotización cancelada.");
-    }
 </script>
-
-</body>
-</html>
