@@ -29,7 +29,7 @@
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        /* CALCULADORA PROFESIONAL */
+        /* CALCULADORA CON ZONAS ESPECÍFICAS */
         .cotizador-container {
             max-width: 600px;
             margin: 40px auto;
@@ -113,23 +113,34 @@
         </div>
 
         <div class="form-group">
-            <label>Zona de entrega:</label>
-            <select id="cot-flete">
-                <option value="0">Juárez (Local)</option>
-                <option value="150">Juárez - Zonas lejanas ($150)</option>
-                <option value="225">Guadalupe - Eloy Cavazos ($225)</option>
-                <option value="300">Guadalupe - Centro / Linda Vista ($300)</option>
-                <option value="375">Apodaca ($375)</option>
-                <option value="450">Monterrey - Centro ($450)</option>
-                <option value="600">Monterrey - Poniente / Sur ($600)</option>
-                <option value="300">San Nicolás ($300)</option>
-                <option value="250">Cadereyta ($250)</option>
+            <label>Ubicación (Zona de entrega):</label>
+            <select id="cot-zona-flete">
+                <optgroup label="Juárez">
+                    <option value="100">Juárez Centro y alrededores ($100)</option>
+                    <option value="150">Juárez Zona Teofilo Salinas / San Mateo ($150)</option>
+                </optgroup>
+                <optgroup label="Guadalupe">
+                    <option value="250">Guadalupe Contry y alrededores ($250)</option>
+                    <option value="250">Guadalupe Zona Expo y alrededores ($250)</option>
+                    <option value="200">Guadalupe Zona Santa Cruz y alrededores ($200)</option>
+                    <option value="200">Guadalupe Zona Dos Ríos ($200)</option>
+                </optgroup>
+                <optgroup label="Monterrey">
+                    <option value="400">Monterrey Centro / Barrio Antiguo ($400)</option>
+                    <option value="500">Monterrey Zona Cumbres ($500)</option>
+                    <option value="450">Monterrey Zona Sur / Carretera Nal. ($450)</option>
+                </optgroup>
+                <optgroup label="Otros Municipios">
+                    <option value="300">Apodaca Centro y alrededores ($300)</option>
+                    <option value="300">San Nicolás (La Fe / Sendero) ($300)</option>
+                    <option value="250">Cadereyta Centro ($250)</option>
+                </optgroup>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Colonia / Sector exacto:</label>
-            <input type="text" id="cot-colonia" placeholder="Ej: Las Lomas">
+            <label>Colonia / Referencia exacta:</label>
+            <input type="text" id="cot-colonia" placeholder="Ej: Col. Las Lomas, Calle Juárez #123">
         </div>
 
         <button class="btn-calcular" onclick="realizarCalculo()">Calcular Costo Total</button>
@@ -137,7 +148,7 @@
         <div id="res-box">
             <p>Equipo: <strong id="res-nom-equipo"></strong></p>
             <p>Renta por días: <strong>$<span id="res-renta"></span></strong></p>
-            <p>Costo de Envío: <strong>$<span id="res-flete"></span></strong></p>
+            <p>Flete a Zona: <strong>$<span id="res-flete"></span></strong></p>
             <hr>
             <h4 style="margin: 0; color: #002752; font-size: 22px;">Total a Pagar: $<span id="res-total"></span></h4>
             
@@ -152,7 +163,7 @@
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         
         <div class="nota-flete">
-            <strong>AVISO IMPORTANTE:</strong> El costo del flete depende de la zona de entrega.
+            <strong>ENTREGA A DOMICILIO:</strong> Selecciona tu zona en la calculadora para conocer el costo de flete.
         </div>
 
         <div class="grid">
@@ -306,31 +317,28 @@
         function realizarCalculo() {
             const precioBase = parseFloat(document.getElementById('cot-equipo').value);
             const dias = parseInt(document.getElementById('cot-dias').value);
-            const costoFlete = parseFloat(document.getElementById('cot-flete').value);
+            const flete = parseFloat(document.getElementById('cot-zona-flete').value);
             
             const equipoTexto = document.getElementById('cot-equipo').options[document.getElementById('cot-equipo').selectedIndex].text;
-            const zonaTexto = document.getElementById('cot-flete').options[document.getElementById('cot-flete').selectedIndex].text;
+            const zonaTexto = document.getElementById('cot-zona-flete').options[document.getElementById('cot-zona-flete').selectedIndex].text;
             const colonia = document.getElementById('cot-colonia').value || "No especificada";
 
             const totalRenta = precioBase * dias;
-            const granTotal = totalRenta + costoFlete;
+            const granTotal = totalRenta + flete;
 
             document.getElementById('res-nom-equipo').innerText = equipoTexto;
             document.getElementById('res-renta').innerText = totalRenta;
-            document.getElementById('res-flete').innerText = costoFlete;
+            document.getElementById('res-flete').innerText = flete;
             document.getElementById('res-total').innerText = granTotal;
             document.getElementById('res-box').style.display = 'block';
 
-            // El mensaje de WhatsApp ya lleva el desglose profesional sin mencionar los 15 pesos
             const mensaje = encodeURIComponent(
-                `Hola GAP, solicito cotización:\n` +
+                `Hola GAP, me interesa rentar:\n` +
                 `- Equipo: ${equipoTexto}\n` +
-                `- Tiempo: ${dias} día(s)\n` +
-                `- Zona: ${zonaTexto}\n` +
-                `- Colonia: ${colonia}\n` +
-                `- Renta: $${totalRenta}\n` +
-                `- Envío: $${costoFlete}\n` +
-                `- TOTAL: $${granTotal}`
+                `- Días: ${dias}\n` +
+                `- Zona Seleccionada: ${zonaTexto}\n` +
+                `- Referencia: ${colonia}\n` +
+                `- Total a pagar: $${granTotal}`
             );
             document.getElementById('btn-whatsapp-cot').href = `https://wa.me/528119988053?text=${mensaje}`;
             
