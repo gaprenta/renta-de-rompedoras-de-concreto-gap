@@ -50,13 +50,12 @@
         .card:hover { border-color: #FFCD00; transform: translateY(-8px); }
         .card-img { width: 100%; height: 280px; object-fit: contain; border-bottom: 4px solid #FFCD00; background: #fdfdfd; }
         
-        /* LEYENDA DISPONIBILIDAD MEJORADA */
-        .disponibilidad-txt { background: #FFCD00; color: #002752; font-size: 11px; text-align: center; padding: 6px; font-family: 'Arial', sans-serif; font-weight: 900; text-transform: uppercase; }
+        .disponibilidad-txt { background: #f8f8f8; color: #d9534f; font-size: 10px; text-align: center; padding: 5px; font-family: sans-serif; border-bottom: 1px solid #eee; }
 
         .card-header-kg { background: #333; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #002752; }
         .card-header-vibrador { background: #002752; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
         .modelo-txt { font-weight: 900; font-size: 1.3em; text-transform: uppercase; }
-        .card-specs-bar { background: #002752; color: #fff; padding: 12px; text-align: center; font-weight: 900; border-top: 2px solid #FFCD00; }
+        .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
         
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
@@ -64,16 +63,18 @@
         .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
-        .btn-cotizar:hover { background: #001a38; border-top: 4px solid #FFCD00; }
+        .btn-cotizar:hover { background: #001a38; }
 
-        /* MODAL */
-        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
-        .modal-content { background: white; margin: 8% auto; padding: 30px; width: 90%; max-width: 400px; border: 8px solid #FFCD00; border-radius: 15px; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .modal-content input { width: 100%; padding: 15px; margin: 10px 0; border: 3px solid #002752; border-radius: 8px; box-sizing: border-box; font-family: Arial; font-weight: bold; font-size: 16px; }
-        .modal-content h3 { color: #002752; margin-bottom: 15px; font-size: 24px; }
-        .modal-btns { display: flex; gap: 15px; margin-top: 25px; }
-        .btn-send { background: #25D366; color: white; flex: 1.5; padding: 18px; border: none; font-weight: 900; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
-        .btn-close { background: #d9534f; color: white; flex: 1; padding: 18px; border: none; font-weight: 900; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
+        /* Estilo para etiqueta de equipo ligero */
+        .tag-ligero { font-size: 0.7em; color: #fff; margin-top: 5px; background: #002752; display: inline-block; padding: 3px 10px; border-radius: 15px; border: 1px solid #FFCD00; }
+
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; }
+        .modal-content input { width: 100%; padding: 12px; margin: 8px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
+        .modal-content h3 { color: #002752; margin-bottom: 15px; }
+        .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+        .btn-send { background: #25D366; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .btn-close { background: #d9534f; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
 
         .footer-info { background: #000; color: #fff; padding: 60px 20px 120px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
         .ws-flotante { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 900; z-index: 9999; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
@@ -126,81 +127,98 @@
             <strong>AVISO IMPORTANTE:</strong> Al rentar, el responsable acepta que el equipo sea entregado por cualquier persona en el domicilio al terminar el plazo.
         </div>
         
+        <p class="nota-variacion">*Las imágenes son ilustrativas. El color y marca del equipo pueden variar dependiendo de la disponibilidad.</p>
+
         <div class="grid">
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 8 KG</span><br>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                </div>
                 <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 8kg')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 8kg (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V1)</span></div>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 12 KG (V1)</span><br>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                </div>
                 <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V1')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V1 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V2)</span></div>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 12 KG (V2)</span><br>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                </div>
                 <img src="12.1.jpg" alt="Rompedora 12.1kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Alto impacto</li>
                         <li><span class="icon-usage">GAP</span> Uso continuo</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V2')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V2 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V1)</span></div>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 15 KG (V1)</span><br>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                </div>
                 <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V1')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V1 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V2)</span></div>
+                <div class="card-header-kg">
+                    <span class="modelo-txt">Rompedora de 15 KG (V2)</span><br>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                </div>
                 <img src="15.1.jpg" alt="Rompedora 15.1kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Cimientos reforzados</li>
                         <li><span class="icon-usage">GAP</span> Máximo poder</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V2')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V2 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V1)</span></div>
                 <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -214,7 +232,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V2)</span></div>
                 <img src="25.1.jpg" alt="Rompedora 25.1kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -226,23 +244,9 @@
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V3)</span></div>
-                <img src="25.2.jpg" alt="Rompedora 25.2kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
-                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Concreto armado</li>
-                        <li><span class="icon-usage">GAP</span> Uso industrial</li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 25kg V3')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
                 <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -255,12 +259,11 @@
         </div>
 
         <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
-        
         <div class="grid">
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Eléctrico CAT</span></div>
                 <img src="Vibrador.jpg" alt="Vibrador Amarillo" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1.5 HP | Alta Frecuencia</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -274,7 +277,7 @@
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Portátil V1</span></div>
                 <img src="vibrador1.jpg" alt="Vibrador 1" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">Chicote Reforzado</div>
                 <div class="card-body">
                     <ul class="ideal-list">
@@ -284,45 +287,19 @@
                     <button onclick="abrirModal('Vibrador Portátil V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Industrial V2</span></div>
-                <img src="vibrador2.jpg" alt="Vibrador 2" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
-                <div class="card-specs-bar">Uso Heavy Duty</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Motores de alto rendimiento</li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador Industrial V2')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador de Precisión V3</span></div>
-                <img src="vibrador3.jpg" alt="Vibrador 3" class="card-img">
-                <div class="disponibilidad-txt">El equipo puede variar según disponibilidad al entregar</div>
-                <div class="card-specs-bar">Cabezal de Acero</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Máxima eliminación de aire</li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador de Precisión V3')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
         </div>
     </main>
 
     <div id="modalCotizacion" class="modal">
         <div class="modal-content">
-            <h3>Datos de Cotización</h3>
-            <p id="equipoTxt" style="font-weight: 900; color: #002752; background: #FFCD00; padding: 10px; border-radius: 5px;"></p>
-            <input type="text" id="nombre" placeholder="Nombre Completo">
-            <input type="text" id="colonia" placeholder="Colonia">
-            <input type="text" id="municipio" placeholder="Municipio">
+            <h3>Solicitud de Cotización</h3>
+            <p id="equipoTxt" style="font-weight: bold; color: #002752;"></p>
+            <input type="text" id="nombre" placeholder="Tu Nombre">
+            <input type="text" id="colonia" placeholder="Tu Colonia">
+            <input type="text" id="municipio" placeholder="Tu Municipio">
             <div class="modal-btns">
-                <button class="btn-close" onclick="cerrarModal()">Rechazar</button>
-                <button class="btn-send" onclick="enviarWhatsapp()">Continuar</button>
+                <button class="btn-close" onclick="cerrarModal()">RECHAZAR</button>
+                <button class="btn-send" onclick="enviarWhatsapp()">CONTINUAR</button>
             </div>
         </div>
     </div>
@@ -350,7 +327,7 @@
 
         function abrirModal(nombreEquipo) {
             equipoSeleccionado = nombreEquipo;
-            document.getElementById('equipoTxt').innerText = nombreEquipo;
+            document.getElementById('equipoTxt').innerText = "Equipo: " + nombreEquipo;
             document.getElementById('modalCotizacion').style.display = 'block';
         }
 
@@ -364,19 +341,13 @@
             const mun = document.getElementById('municipio').value;
 
             if(nom == "" || col == "" || mun == "") {
-                alert("Por favor completa tus datos para recibir la cotización.");
+                alert("Por favor completa tus datos para la cotización");
                 return;
             }
 
-            const mensaje = `Hola GAP, deseo cotizar la renta de un equipo.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}`;
+            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}`;
             window.open(`https://wa.me/528119988053?text=${mensaje}`, '_blank');
             cerrarModal();
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('modalCotizacion')) {
-                cerrarModal();
-            }
         }
     </script>
 
