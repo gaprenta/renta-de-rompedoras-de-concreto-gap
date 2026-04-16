@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-A-P | Especialistas en Renta de Rompedoras</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY_AQUI&libraries=places"></script>
+    <title>G-A-P | Soluciones Profesionales en Demolición</title>
     
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; background: #fff; color: #000; }
         header { background: #FFCD00; border-bottom: 8px solid #002752; text-align: center; }
         .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
         
-        .hero { background: #002752; color: #fff; padding: 35px 20px; text-align: center; }
-        .hero h2 { color: #FFCD00; margin: 0 0 10px 0; text-transform: uppercase; font-size: 24px; }
-        .hero p { margin: 0; font-size: 16px; font-family: 'Arial', sans-serif; }
+        .hero { background: #002752; color: #fff; padding: 40px 20px; text-align: center; }
+        .hero h2 { color: #FFCD00; margin: 0 0 10px 0; text-transform: uppercase; font-size: 28px; letter-spacing: -1px; }
+        .hero p { margin: 0; font-size: 18px; font-family: 'Arial', sans-serif; font-weight: bold; }
 
         .cotizador-container { max-width: 650px; margin: 40px auto; background: #f4f4f4; border: 5px solid #FFCD00; padding: 25px; border-radius: 15px; font-family: 'Arial', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .form-group { margin-bottom: 15px; }
@@ -45,17 +44,17 @@
 <header><img src="logotipo1.png" alt="G-A-P Renta de Rompedoras" class="header-logo-img"></header>
 
 <section class="hero">
-    <h2>Especialistas en renta de rompedoras y vibradores</h2>
-    <p>Somos tu aliado en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</p>
+    <h2>Líderes en Renta de Rompedoras y Vibradores de Concreto</h2>
+    <p>Potencia, Eficiencia y Compromiso en cada Obra. Servimos a todo Monterrey y Área Metropolitana.</p>
 </section>
 
 <div class="cotizador-container" id="form-pedidos">
     <div class="form-group">
         <label>Nombre del Cliente:</label>
-        <input type="text" id="nombre" placeholder="Ej. Juan Pérez">
+        <input type="text" id="nombre" placeholder="Nombre completo">
     </div>
     <div class="form-group">
-        <label>Teléfono:</label>
+        <label>Teléfono de contacto:</label>
         <input type="tel" id="tel" placeholder="8119988053">
     </div>
     
@@ -63,68 +62,49 @@
         <label>Zona de Entrega:</label>
         <select id="zona" onchange="actualizarFletePorZona()">
             <option value="0" disabled selected>-- Selecciona tu Ubicación --</option>
-            <optgroup label="JUÁREZ (Base Valle Sur)">
-                <option value="4">Valle Sur / Real de Juárez - $60</option>
-                <option value="6">Colonia Santa Mónica - $90</option>
-                <option value="8">Juárez Centro / Monumento - $120</option>
-                <option value="12">Anzures / Terranova - $180</option>
+            <optgroup label="JUÁREZ (Desde Base Valle Sur)">
+                <option value="4">Valle Sur / Real de Juárez - $200</option>
+                <option value="6">Colonia Santa Mónica - $200</option>
+                <option value="8">Juárez Centro / Monumento - $200</option>
+                <option value="12">Anzures / Terranova - $200</option>
                 <option value="15">San Roque / Arboledas - $225</option>
-                <option value="14">Colonia Los Puertos - $210</option>
-                <option value="10">Villas de San José - $150</option>
-                <option value="16">Mirador del Sol - $240</option>
-                <option value="7">Eugenio Canavati - $105</option>
-                <option value="11">Praderas de San Juan - $165</option>
+                <option value="18">Colonia Los Puertos - $270</option>
             </optgroup>
             <optgroup label="GUADALUPE">
-                <option value="18">Paseo de Guadalupe - $270</option>
-                <option value="20">Eloy Cavazos / Av. México - $300</option>
-                <option value="22">Tres Caminos - $330</option>
-                <option value="25">Santa Cruz / San Sebastián - $375</option>
-                <option value="24">Villas de San Miguel - $360</option>
+                <option value="19">Paseo de Guadalupe - $285</option>
+                <option value="21">Eloy Cavazos / Av. México - $315</option>
+                <option value="23">Tres Caminos - $345</option>
+                <option value="26">Santa Cruz / San Sebastián - $390</option>
                 <option value="28">Lindavista - $420</option>
                 <option value="30">Contry La Silla - $450</option>
-                <option value="26">Azteca / Exposición - $390</option>
-                <option value="21">Colonia La Pastora - $315</option>
-                <option value="23">San Rafael - $345</option>
             </optgroup>
             <optgroup label="MONTERREY">
                 <option value="35">Monterrey Centro - $525</option>
                 <option value="32">Zona Tecnológico - $480</option>
-                <option value="38">Colonia Roma / Florida - $570</option>
                 <option value="42">San Jerónimo - $630</option>
-                <option value="45">Cumbres (1er a 3er Sector) - $675</option>
-                <option value="55">Cumbres García / Dominio - $825</option>
-                <option value="48">Mitras Centro / Norte - $720</option>
-                <option value="36">San Bernabé - $540</option>
-                <option value="40">Colonia Obispado - $600</option>
-                <option value="50">Solidaridad - $750</option>
+                <option value="46">Cumbres (1er a 4to Sector) - $690</option>
+                <option value="55">Cumbres Dominio / García - $825</option>
+                <option value="50">Zona Solidaridad - $750</option>
             </optgroup>
             <optgroup label="APODACA">
                 <option value="26">Huinalá / Pueblo Nuevo - $390</option>
                 <option value="32">Apodaca Centro - $480</option>
-                <option value="35">Santa Rosa - $525</option>
-                <option value="28">Las Cruces - $420</option>
-                <option value="30">Mezquital - $450</option>
-                <option value="34">Fresnos / Concordia - $510</option>
-                <option value="38">Aeropuerto - $570</option>
-                <option value="31">Misión Particular - $465</option>
-                <option value="29">La Enramada - $435</option>
+                <option value="36">Santa Rosa - $540</option>
+                <option value="38">Zona Aeropuerto - $570</option>
+                <option value="34">Concordia / Fresnos - $510</option>
             </optgroup>
             <optgroup label="SAN NICOLÁS / ESCOBEDO">
                 <option value="32">Anáhuac - $480</option>
-                <option value="34">Las Puentes / San Nicolás Centro - $510</option>
-                <option value="36">La Fe / Miguel Alemán - $540</option>
-                <option value="38">Universidad UANL - $570</option>
+                <option value="35">San Nicolás Centro / La Fe - $525</option>
                 <option value="42">Escobedo Centro - $630</option>
-                <option value="45">Sendero / Plaza Bella - $675</option>
-                <option value="40">Colonia Nogalar - $600</option>
+                <option value="48">Sendero / Plaza Bella - $720</option>
             </optgroup>
         </select>
     </div>
 
     <div class="form-group">
         <label>Dirección exacta (Calle y Número):</label>
-        <input type="text" id="direccion" placeholder="Ej. Calle Roble #123">
+        <input type="text" id="direccion" placeholder="Ej. Calle Roble #123, Col. Las Lomas">
     </div>
 
     <div class="form-group">
@@ -148,65 +128,70 @@
     </div>
 
     <div id="info-km" class="info-flete" style="display:none;">
-        Distancia base: <span id="km-txt">0</span> km | Flete: $<span id="fl-txt">0</span>
+        Flete Calculado: $<span id="fl-txt">0</span>
     </div>
 
-    <button class="btn-calcular" onclick="mostrarResumen()">Calcular y Solicitar Equipo</button>
+    <button class="btn-calcular" onclick="mostrarResumen()">Calcular Presupuesto</button>
 
     <div id="res-box">
-        <h3 style="margin:0;">Resumen del Pedido</h3>
+        <h3 style="margin:0;">Confirmación de Pedido</h3>
         <p id="res-detalles"></p>
         <hr>
-        <h2 style="margin:0; color:#25D366;">Total Estimado: $<span id="res-total"></span></h2>
-        <a href="#" id="wa-link" class="btn-confirmar" target="_blank">CONFIRMAR POR WHATSAPP</a>
+        <h2 style="margin:0; color:#25D366;">Total: $<span id="res-total"></span></h2>
+        <a href="#" id="wa-link" class="btn-confirmar" target="_blank">ENVIAR A WHATSAPP</a>
     </div>
 </div>
 
 <section class="seccion-equipos">
-    <h2 style="text-align:center; text-transform:uppercase;">Maquinaria Disponible</h2>
+    <h2 style="text-align:center; text-transform:uppercase;">Nuestra Maquinaria</h2>
     <div class="grid">
-        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ranuras para tubería y demolición de muros.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Retiro de azulejo y demolición ligera.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Vigas y muros de concreto armado.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Banqueta y pisos de concreto comercial.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Uso rudo: Asfalto y losas industriales.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Alta potencia para losas y cimentaciones.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Portátil ideal para castillos y columnas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Motor reforzado para obra continua.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Compactación precisa en acabados finos.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ideal para ranuras y demolición de muros ligeros.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Retiro de azulejo y demolición de pisos delgados.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para muros de concreto y vigas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Especialista en banquetas y pisos firmes.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Máximo poder: Asfalto y losas industriales.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Compactación profunda de concreto en losas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Portátil para castillos y columnas estrechas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Motor de uso continuo para jornadas largas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Acabado espejo y alta frecuencia.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
     </div>
 </section>
 
 <footer>
     <div class="footer-grid">
         <div class="footer-item">
-            <h3>Sobre G-A-P</h3>
-            <p>Somos una empresa dedicada a facilitar la construcción con equipo de alto rendimiento. Nuestra prioridad es la puntualidad y el buen estado de nuestras herramientas.</p>
+            <h3>Nuestra Empresa</h3>
+            <p>En G-A-P nos enfocamos en proporcionar soluciones reales para la construcción. Ofrecemos equipos de última generación con mantenimiento constante para garantizar cero paros en su obra.</p>
         </div>
         <div class="footer-item">
             <h3>Horarios de Atención</h3>
-            <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 2:00 PM<br>Domingos: Previa Cita</p>
+            <p>
+                <b>Lunes a Viernes:</b> 8:00 AM - 8:00 PM<br>
+                <b>Sábados:</b> 9:00 AM - 5:00 PM<br>
+                <b>Domingos:</b> 9:00 AM - 2:00 PM
+            </p>
         </div>
         <div class="footer-item">
-            <h3>Contacto Directo</h3>
-            <p>WhatsApp: 81-1998-8053<br>Ubicación Base: Valle Sur, Juárez, NL.</p>
+            <h3>Contacto</h3>
+            <p>WhatsApp: 81-1998-8053<br>Base Logística: Valle Sur, Juárez, Nuevo León.</p>
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2026 G-A-P Renta de Rompedoras y Vibradores de Concreto. Todos los derechos reservados.
+        &copy; 2026 G-A-P Renta de Rompedoras y Vibradores de Concreto. Profesionalismo a su servicio.
     </div>
 </footer>
 
 <script>
-    let distFinal = 0;
     let fleteFinal = 0;
 
     function actualizarFletePorZona() {
         const zonaSelect = document.getElementById('zona');
-        distFinal = parseInt(zonaSelect.value);
-        fleteFinal = distFinal * 15;
+        let km = parseInt(zonaSelect.value);
+        let costoCalculado = km * 15;
         
-        document.getElementById('km-txt').innerText = distFinal;
+        // Aplicar mínimo de $200 y redondear
+        fleteFinal = Math.max(200, Math.ceil(costoCalculado));
+        
         document.getElementById('fl-txt').innerText = fleteFinal;
         document.getElementById('info-km').style.display = 'block';
     }
@@ -222,7 +207,7 @@
         const eNom = eSelect.options[eSelect.selectedIndex].text;
         
         if(!nom || zonaSel.value == "0") {
-            alert("Por favor llena los datos y selecciona una zona.");
+            alert("Por favor ingrese su nombre y seleccione una zona de entrega.");
             return;
         }
 
@@ -231,23 +216,23 @@
 
         document.getElementById('res-detalles').innerHTML = `
             <b>Cliente:</b> ${nom}<br>
-            <b>Ubicación:</b> ${zonaNom}<br>
-            <b>Equipo:</b> ${eNom} x ${d} día(s)<br>
-            <b>Subtotal Renta:</b> $${renta}<br>
-            <b>Costo Flete:</b> $${fleteFinal}
+            <b>Zona:</b> ${zonaNom}<br>
+            <b>Equipo:</b> ${eNom}<br>
+            <b>Periodo:</b> ${d} día(s)<br>
+            <b>Flete:</b> $${fleteFinal}
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        const mensajeWA = `*NUEVA SOLICITUD G-A-P*\n\n` +
-            `*Cliente:* ${nom}\n` +
-            `*Tel:* ${tel}\n` +
-            `*Zona:* ${zonaNom}\n` +
+        const mensajeWA = `*SOLICITUD DE RENTA PROFESIONAL G-A-P*\n\n` +
+            `*Nombre:* ${nom}\n` +
+            `*Teléfono:* ${tel}\n` +
+            `*Ubicación:* ${zonaNom}\n` +
             `*Dirección:* ${dir}\n` +
             `*Equipo:* ${eNom}\n` +
             `*Días:* ${d}\n` +
             `*Flete:* $${fleteFinal}\n` +
-            `*TOTAL:* $${total}`;
+            `*TOTAL ESTIMADO: $${total}*`;
 
         document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
     }
