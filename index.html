@@ -23,7 +23,6 @@
         
         #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #002752; display: none; border-radius: 10px; }
         
-        /* BOTONES DE CONFIRMACIÓN */
         .botones-confirmar { display: flex; gap: 10px; margin-top: 15px; }
         .btn-confirmar { flex: 1; background: #25D366; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 5px; font-weight: bold; }
         .btn-rechazar { flex: 1; background: #FF3B30; color: white; padding: 15px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
@@ -47,7 +46,7 @@
 
 <section class="hero">
     <h2>Líderes en Renta de Rompedoras y Vibradores de Concreto</h2>
-    <p>Potencia, Eficiencia y Compromiso en cada Obra. Somos tu aliado en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey.</p>
+    <p>Potencia, Eficiencia y Compromiso en cada Obra. Soluciones integrales para construcción en Nuevo León.</p>
 </section>
 
 <div class="cotizador-container" id="form-pedidos">
@@ -57,28 +56,19 @@
     </div>
     
     <div class="form-group">
-        <label>Zona de Entrega:</label>
+        <label>Distancia desde Base (Valle Sur):</label>
         <select id="zona">
-            <option value="0" disabled selected>-- Selecciona tu Zona --</option>
-            <option value="200">Todo Juárez - $200</option>
-            <option value="350">Cadereyta - $350</option>
-            <option value="200">Guadalupe (Dos Ríos / Mol / Pablo Livas) - $200</option>
-            <option value="250">Guadalupe (La Pastora / Contry) - $250</option>
-            <option value="300">Zona Lindavista - $300</option>
-            <option value="300">Zona Tec - $300</option>
-            <option value="400">Monterrey Centro - $400</option>
-            <option value="500">Monterrey Cumbres - $500</option>
-            <option value="300">San Nicolás (Zona La Fe) - $300</option>
-            <option value="350">San Nicolás (Anillo Periférico / J. Pablo II) - $350</option>
-            <option value="350">San Nicolás (Zona Las Puentes) - $350</option>
-            <option value="400">San Nicolás (Zona Sendero) - $400</option>
-            <option value="400">Centro Apodaca - $400</option>
-            <option value="400">Pesquería - $400</option>
+            <option value="0" disabled selected>-- Selecciona Radio de Distancia --</option>
+            <option value="200">Radio de 0 a 7 km - $200</option>
+            <option value="250">Radio de 7 a 14 km - $250</option>
+            <option value="300">Radio de 14 a 21 km - $300</option>
+            <option value="400">Radio de 21 a 28 km - $400</option>
+            <option value="450">Radio de 28 a 35 km - $450</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>Dirección exacta:</label>
+        <label>Dirección exacta y Colonia:</label>
         <input type="text" id="direccion" placeholder="Calle, número y colonia">
     </div>
 
@@ -108,7 +98,7 @@
         <h3 style="margin:0; text-transform:uppercase; color:#002752;">Resumen de Cotización</h3>
         <p id="res-detalles" style="line-height:1.6;"></p>
         <hr>
-        <h2 style="margin:0; color:#002752;">TOTAL: $<span id="res-total"></span></h2>
+        <h2 style="margin:0; color:#002752;">TOTAL ESTIMADO: $<span id="res-total"></span></h2>
         
         <div class="botones-confirmar">
             <a href="#" id="wa-link" class="btn-confirmar" target="_blank">ACEPTAR</a>
@@ -125,7 +115,11 @@
         <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para muros de concreto y vigas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
         <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Especialista en banquetas y pisos firmes.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
         <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Máximo poder: Asfalto y losas industriales.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
-        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Compactación profunda de concreto en losas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        
+        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Alta potencia para compactación profunda en losas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Diseño portátil ideal para castillos y columnas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Motor reforzado para uso continuo en obra.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Cabezal de alta frecuencia para acabados finos.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
     </div>
 </section>
 
@@ -133,10 +127,10 @@
     <div class="footer-grid">
         <div class="footer-item">
             <h3>Nuestra Empresa</h3>
-            <p>En G-A-P proporcionamos equipos de última generación para garantizar cero paros en su obra.</p>
+            <p>En G-A-P nos enfocamos en proporcionar soluciones reales para la construcción. Ofrecemos equipos con mantenimiento constante para garantizar el éxito de su proyecto.</p>
         </div>
         <div class="footer-item">
-            <h3>Horarios</h3>
+            <h3>Horarios de Atención</h3>
             <p>
                 <b>Lunes a Viernes:</b> 8:00 AM - 8:00 PM<br>
                 <b>Sábados:</b> 9:00 AM - 5:00 PM<br>
@@ -145,7 +139,7 @@
         </div>
         <div class="footer-item">
             <h3>Contacto</h3>
-            <p>WhatsApp: 8119988053<br>Base: Valle Sur, Juárez, NL.</p>
+            <p>WhatsApp: 8119988053<br>Base Logística: Valle Sur, Juárez, NL.</p>
         </div>
     </div>
 </footer>
@@ -162,7 +156,7 @@
         const eNom = eSelect.options[eSelect.selectedIndex].text;
         
         if(!nom || zonaSel.value == "0") {
-            alert("Por favor completa tu nombre y selecciona una zona.");
+            alert("Por favor completa tu nombre y selecciona el radio de distancia.");
             return;
         }
 
@@ -172,18 +166,18 @@
 
         document.getElementById('res-detalles').innerHTML = `
             <b>Cliente:</b> ${nom}<br>
-            <b>Zona:</b> ${zonaNom}<br>
+            <b>Distancia:</b> ${zonaNom}<br>
             <b>Equipo:</b> ${eNom}<br>
-            <b>Días:</b> ${d}<br><br>
+            <b>Días de renta:</b> ${d}<br><br>
             <b>Costo Renta:</b> $${rentaTotal}<br>
             <b>Costo Flete:</b> $${flete}
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        const mensajeWA = `*SOLICITUD G-A-P*\n\n` +
+        const mensajeWA = `*SOLICITUD DE RENTA G-A-P*\n\n` +
             `*Cliente:* ${nom}\n` +
-            `*Zona:* ${zonaNom}\n` +
+            `*Rango Distancia:* ${zonaNom}\n` +
             `*Dirección:* ${dir}\n` +
             `*Equipo:* ${eNom}\n` +
             `*Días:* ${d}\n` +
@@ -198,7 +192,7 @@
 
     function rechazarPedido() {
         document.getElementById('res-box').style.display = 'none';
-        alert("Cotización cancelada. Puedes ajustar tus datos.");
+        alert("Cotización cancelada. Puedes modificar los datos si lo deseas.");
     }
 </script>
 
