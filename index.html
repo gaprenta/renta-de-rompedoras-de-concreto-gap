@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renta de Rompedoras de Concreto en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey | G-A-P</title>
-    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg) y vibradores en Monterrey, Guadalupe, Juárez y Apodaca. Equipos de alta potencia y entrega puntual.">
+    <title>Renta de Rompedoras, Revolvedoras y Equipo Ligero en NL | G-A-P</title>
+    <meta name="description" content="Renta de rompedoras de concreto (8kg a 27kg), vibradores, revolvedoras y compactadoras en Monterrey, Guadalupe, Juárez y Apodaca. Alta potencia y entrega puntual.">
     <link rel="canonical" href="https://gaprenta.github.io/renta-de-rompedoras-de-concreto-gap/" />
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -50,22 +50,31 @@
         .card:hover { border-color: #FFCD00; transform: translateY(-8px); }
         .card-img { width: 100%; height: 280px; object-fit: contain; border-bottom: 4px solid #FFCD00; background: #fdfdfd; }
         
+        /* Rotación específica para equipos tipo pistola (8, 12, 15 kg) */
+        .img-pistola { transform: rotate(90deg); object-fit: contain !important; padding: 20px; }
+
         .disponibilidad-txt { background: #f8f8f8; color: #d9534f; font-size: 10px; text-align: center; padding: 5px; font-family: sans-serif; border-bottom: 1px solid #eee; }
 
         .card-header-kg { background: #333; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #002752; }
         .card-header-vibrador { background: #002752; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
+        /* Header para otros equipos */
+        .card-header-general { background: #555; color: #fff; padding: 20px; text-align: center; border-bottom: 5px solid #333; }
+
         .modelo-txt { font-weight: 900; font-size: 1.3em; text-transform: uppercase; }
         .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
+        /* Barra de specs para otros equipos */
+        .card-specs-bar-general { background: #333; color: #FFCD00; padding: 12px; text-align: center; font-weight: 900; }
         
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
         .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
+        /* Icono para otros equipos */
+        .icon-usage-g { color: #fff; background: #555; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
         .btn-cotizar:hover { background: #001a38; }
 
-        /* Estilo para etiqueta de equipo ligero */
         .tag-ligero { font-size: 0.7em; color: #fff; margin-top: 5px; background: #002752; display: inline-block; padding: 3px 10px; border-radius: 15px; border: 1px solid #FFCD00; }
 
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
@@ -127,32 +136,31 @@
             <strong>AVISO IMPORTANTE:</strong> Al rentar, el responsable acepta que el equipo sea entregado por cualquier persona en el domicilio al terminar el plazo.
         </div>
         
-        <p class="nota-variacion">*Las imágenes son ilustrativas. El color y marca del equipo pueden variar dependiendo de la disponibilidad.</p>
+        <p class="nota-variacion">*Las imágenes son ilustrativas. El color, marca y orientación del equipo pueden variar dependiendo de la disponibilidad.</p>
 
         <div class="grid">
             <div class="card">
                 <div class="card-header-kg">
                     <span class="modelo-txt">Rompedora de 8 KG</span><br>
-                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO PISTOLA</span>
                 </div>
-                <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <img src="8.jpg" alt="Rompedora 8kg" class="card-img img-pistola"> <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 8kg (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 8kg (Pistola)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg">
                     <span class="modelo-txt">Rompedora de 12 KG (V1)</span><br>
-                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO PISTOLA</span>
                 </div>
-                <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
+                <img src="12.jpg" alt="Rompedora 12kg" class="card-img img-pistola">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
                 <div class="card-body">
@@ -160,16 +168,16 @@
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V1 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V1 (Pistola)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg">
                     <span class="modelo-txt">Rompedora de 12 KG (V2)</span><br>
-                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO PISTOLA</span>
                 </div>
-                <img src="12.1.jpg" alt="Rompedora 12.1kg" class="card-img">
+                <img src="12.1.jpg" alt="Rompedora 12.1kg" class="card-img img-pistola">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
                 <div class="card-body">
@@ -177,16 +185,16 @@
                         <li><span class="icon-usage">GAP</span> Alto impacto</li>
                         <li><span class="icon-usage">GAP</span> Uso continuo</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 12kg V2 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 12kg V2 (Pistola)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg">
                     <span class="modelo-txt">Rompedora de 15 KG (V1)</span><br>
-                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO PISTOLA</span>
                 </div>
-                <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
+                <img src="15.jpg" alt="Rompedora 15kg" class="card-img img-pistola">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
                 <div class="card-body">
@@ -194,16 +202,16 @@
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V1 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V1 (Pistola)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg">
                     <span class="modelo-txt">Rompedora de 15 KG (V2)</span><br>
-                    <span class="tag-ligero">EQUIPO LIGERO TIPO TALADRO</span>
+                    <span class="tag-ligero">EQUIPO LIGERO TIPO PISTOLA</span>
                 </div>
-                <img src="15.1.jpg" alt="Rompedora 15.1kg" class="card-img">
+                <img src="15.1.jpg" alt="Rompedora 15.1kg" class="card-img img-pistola">
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
                 <div class="card-body">
@@ -211,7 +219,7 @@
                         <li><span class="icon-usage">GAP</span> Cimientos reforzados</li>
                         <li><span class="icon-usage">GAP</span> Máximo poder</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 15kg V2 (Ligera)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 15kg V2 (Pistola)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
@@ -258,7 +266,7 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
+        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Equipo para Concreto</h2></div>
         <div class="grid">
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Eléctrico CAT</span></div>
@@ -287,7 +295,98 @@
                     <button onclick="abrirModal('Vibrador Portátil V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Revolvedora 1 Saco</span></div>
+                <img src="revolvedora.jpg" alt="Revolvedora de Concreto" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">Motor Gasolina 9 HP</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Mezcla homogénea</li>
+                        <li><span class="icon-usage-g">GAP</span> Alta producción</li>
+                    </ul>
+                    <button onclick="abrirModal('Revolvedora 1 Saco')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
         </div>
+
+        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Compactación y Terracería</h2></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Bailarina Compactadora</span></div>
+                <img src="bailarina.jpg" alt="Compactadora tipo Bailarina" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">Motor 4 HP | Fuerza Impacto</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Zanjas y cimientos</li>
+                        <li><span class="icon-usage-g">GAP</span> Suelos cohesivos</li>
+                    </ul>
+                    <button onclick="abrirModal('Bailarina Compactadora')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Placa Vibratoria</span></div>
+                <img src="placa.jpg" alt="Placa Vibratoria Compactadora" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">Motor 5.5 HP | Asfalto/Grava</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Adocretos y parches</li>
+                        <li><span class="icon-usage-g">GAP</span> Acabado liso</li>
+                    </ul>
+                    <button onclick="abrirModal('Placa Vibratoria')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Cortadora de Piso</span></div>
+                <img src="cortadora.jpg" alt="Cortadora de Concreto y Asfalto" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">Motor 13 HP | Disco 14"-16"</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Juntas de expansión</li>
+                        <li><span class="icon-usage-g">GAP</span> Corte preciso</li>
+                    </ul>
+                    <button onclick="abrirModal('Cortadora de Piso')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Generación y Energía</h2></div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Generador 5000W</span></div>
+                <img src="generador.jpg" alt="Generador Eléctrico Portátil" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">110V / 220V | Gasolina</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Herramienta eléctrica</li>
+                        <li><span class="icon-usage-g">GAP</span> Respaldo energía</li>
+                    </ul>
+                    <button onclick="abrirModal('Generador 5000W')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-general"><span class="modelo-txt">Torre de Luz</span></div>
+                <img src="torre-luz.jpg" alt="Torre de Iluminación para Obra" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar-general">Motor Diésel | 4 Lámparas</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage-g">GAP</span> Trabajo nocturno</li>
+                        <li><span class="icon-usage-g">GAP</span> Amplia cobertura</li>
+                    </ul>
+                    <button onclick="abrirModal('Torre de Luz')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div id="modalCotizacion" class="modal">
@@ -343,13 +442,3 @@
             if(nom == "" || col == "" || mun == "") {
                 alert("Por favor completa tus datos para la cotización");
                 return;
-            }
-
-            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}`;
-            window.open(`https://wa.me/528119988053?text=${mensaje}`, '_blank');
-            cerrarModal();
-        }
-    </script>
-
-</body>
-</html>
