@@ -19,6 +19,9 @@
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 2px solid #002752; border-radius: 5px; font-weight: bold; box-sizing: border-box; font-size: 14px; }
         
+        /* Estilo para el detector de zona */
+        .zona-status { background: #002752; color: #FFCD00; padding: 10px; border-radius: 5px; font-size: 12px; margin-top: 5px; font-weight: bold; text-align: center; }
+
         .btn-calcular { width: 100%; background: #000; color: #FFCD00; padding: 20px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 18px; }
         
         #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #002752; display: none; border-radius: 10px; }
@@ -56,27 +59,14 @@
     </div>
     
     <div class="form-group">
-        <label>Municipio / Zona de Obra:</label>
-        <select id="zona">
-            <option value="0" disabled selected>-- Seleccione su Ubicación --</option>
-            <option value="200">Juárez (Todas las colonias)</option>
-            <option value="200">Guadalupe (Dos Ríos, Paseo Gpe, Eloy Cavazos)</option>
-            <option value="300">Guadalupe (Lindavista, La Pastora, Contry)</option>
-            <option value="300">Apodaca (Huinalá, Pueblo Nuevo, Centro)</option>
-            <option value="300">San Nicolás (La Fe, Anillo Periférico)</option>
-            <option value="400">San Nicolás (Universidad, Las Puentes, Sendero)</option>
-            <option value="400">Monterrey (Centro, Zona Tec)</option>
-            <option value="400">Pesquería</option>
-            <option value="500">Monterrey (Cumbres, San Jerónimo, San Pedro)</option>
-            <option value="500">Escobedo / García (Sectores lejanos)</option>
-            <option value="500">Santa Catarina</option>
-            <option value="500">Santiago, N.L.</option>
-        </select>
+        <label>Colonia / Sector de Entrega:</label>
+        <input type="text" id="coloniaInput" placeholder="Ej: Valle Sur, La Pastora, Huinalá..." onkeyup="detectarZona()">
+        <div id="infoZona" class="zona-status">Escriba su colonia para detectar flete automáticamente</div>
     </div>
 
     <div class="form-group">
         <label>Dirección exacta (Calle y Número):</label>
-        <input type="text" id="direccion" placeholder="Ej. Calle Pino #123, Col. Real de Juárez">
+        <input type="text" id="direccion" placeholder="Ej. Calle Pino #123">
     </div>
 
     <div class="form-group">
@@ -98,6 +88,9 @@
         <label>Días de renta:</label>
         <input type="number" id="dias" value="1" min="1">
     </div>
+
+    <input type="hidden" id="costoFlete" value="350">
+    <input type="hidden" id="nombreZona" value="No identificada">
 
     <button class="btn-calcular" onclick="mostrarResumen()">Calcular Presupuesto</button>
 
@@ -147,18 +140,62 @@
 </footer>
 
 <script>
+    // BASE DE DATOS DE COLONIAS
+    const baseZonas = [
+        { palabras: ["valle sur", "san roque", "santa monica", "anzures", "juarez centro", "real de juarez", "acueducto"], zona: "Juárez (Cercano)", costo: 200 },
+        { palabras: ["tres caminos", "coahuila", "xochimilco", "dos rios", "el porvenir", "paseo gpe", "eloy cavazos"], zona: "Guadalupe (Cercano)", costo: 250 },
+        { palabras: ["la pastora", "vivienda popular", "expo", "estadio", "tolteca", "lindavista", "contry"], zona: "Guadalupe (Centro/Poniente)", costo: 350 },
+        { palabras: ["huinala", "pueblo nuevo", "centro de apodaca", "la fe", "las puentes", "sendero", "san nicolas"], zona: "Apodaca / San Nicolás", costo: 400 },
+        { palabras: ["mty centro", "zona tec", "obispado", "pesqueria"], zona: "Monterrey Centro / Pesquería", costo: 450 },
+        { palabras: ["cumbres", "san jeronimo", "santa catarina", "garcia", "dominio", "san pedro"], zona: "Zona Poniente Extendida", costo: 550 }
+    ];
+
+    function detectarZona() {
+        const input = document.getElementById('coloniaInput').value.toLowerCase();
+        const infoZona = document.getElementById('infoZona');
+        const fleteInput = document.getElementById('costoFlete');
+        const nombreZonaInput = document.getElementById('nombreZona');
+        
+        let zonaEncontrada = null;
+
+        if (input.length > 2) {
+            for (let z of baseZonas) {
+                for (let p of z.palabras) {
+                    if (input.includes(p)) {
+                        zonaEncontrada = z;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (zonaEncontrada) {
+            infoZona.innerText = "✓ Ubicación Detectada: Logística Optimizada";
+            infoZona.style.background = "#25D366"; // Verde WhatsApp
+            infoZona.style.color = "#fff";
+            fleteInput.value = zonaEncontrada.costo;
+            nombreZonaInput.value = zonaEncontrada.zona;
+        } else {
+            infoZona.innerText = "Escriba su colonia para validar cobertura...";
+            infoZona.style.background = "#002752";
+            infoZona.style.color = "#FFCD00";
+            fleteInput.value = 350; // Flete base por defecto
+            nombreZonaInput.value = "Zona General";
+        }
+    }
+
     function mostrarResumen() {
         const nom = document.getElementById('nombre').value;
+        const col = document.getElementById('coloniaInput').value;
         const dir = document.getElementById('direccion').value;
-        const zonaSel = document.getElementById('zona');
-        const zonaNom = zonaSel.options[zonaSel.selectedIndex].text;
-        const flete = parseFloat(zonaSel.value);
-        const d = document.getElementById('dias').value;
+        const flete = parseFloat(document.getElementById('costoFlete').value);
+        const zonaDetectada = document.getElementById('nombreZona').value;
+        const d = parseInt(document.getElementById('dias').value);
         const eSelect = document.getElementById('equipo');
         const eNom = eSelect.options[eSelect.selectedIndex].text;
         
-        if(!nom || zonaSel.value == "0") {
-            alert("Por favor completa tu nombre y selecciona tu ubicación.");
+        if(!nom || col.length < 3) {
+            alert("Por favor completa tu nombre y colonia.");
             return;
         }
 
@@ -166,28 +203,25 @@
         const rentaTotal = costoRentaIndividual * d;
         const total = rentaTotal + flete;
 
-        // EL CLIENTE SOLO VE DATOS GENERALES Y EL TOTAL NETO
         document.getElementById('res-detalles').innerHTML = `
             <b>Cliente:</b> ${nom}<br>
-            <b>Ubicación:</b> ${zonaNom}<br>
-            <b>Equipo Solicitado:</b> ${eNom}<br>
-            <b>Tiempo de Renta:</b> ${d} día(s)<br>
-            <b>Logística:</b> Servicio de entrega a domicilio incluido.
+            <b>Sector:</b> ${col}<br>
+            <b>Equipo:</b> ${eNom}<br>
+            <b>Tiempo:</b> ${d} día(s)<br>
+            <b>Logística:</b> Envío a domicilio incluido.
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        // PARA TU CONTROL POR WHATSAPP, EL MENSAJE SÍ TRAE EL DESGLOSE
-        const mensajeWA = `*NUEVO PEDIDO G-A-P*\n\n` +
+        const mensajeWA = `*SOLICITUD DE RENTA G-A-P*\n\n` +
             `*Cliente:* ${nom}\n` +
-            `*Ubicación:* ${zonaNom}\n` +
+            `*Colonia:* ${col}\n` +
+            `*Zona Detectada:* ${zonaDetectada}\n` +
             `*Dirección:* ${dir}\n` +
             `*Equipo:* ${eNom}\n` +
             `*Días:* ${d}\n` +
             `--------------------------\n` +
-            `*Subtotal Renta:* $${rentaTotal}\n` +
-            `*Flete Interno:* $${flete}\n` +
-            `*TOTAL A COBRAR: $${total}*`;
+            `*Total Neto: $${total}*`;
 
         document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
         window.location.hash = '#res-box';
