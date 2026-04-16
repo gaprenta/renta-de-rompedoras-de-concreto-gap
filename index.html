@@ -45,6 +45,7 @@
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
         .form-group select, .form-group input { width: 100%; padding: 12px; border: 2px solid #002752; border-radius: 5px; font-weight: bold; font-size: 16px; box-sizing: border-box; }
+        .info-flete { font-size: 0.85em; color: #666; font-style: italic; margin-top: 5px; display: block; }
         
         .btn-calcular { width: 100%; background: #000; color: #FFCD00; padding: 18px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 5px; font-size: 18px; transition: 0.3s; }
         .btn-calcular:hover { background: #FFCD00; color: #000; }
@@ -114,20 +115,14 @@
         </div>
 
         <div class="form-group">
-            <label>Municipio (Flete):</label>
-            <select id="cot-municipio">
-                <option value="250">Guadalupe ($250)</option>
-                <option value="200">Juárez ($200)</option>
-                <option value="300">Apodaca ($300)</option>
-                <option value="400">Monterrey ($400)</option>
-                <option value="350">Cadereyta ($350)</option>
-                <option value="300">San Nicolás ($300)</option>
-            </select>
+            <label>Distancia desde Juárez (KM):</label>
+            <input type="number" id="cot-km" value="0" min="0" placeholder="Ej: 10">
+            <span class="info-flete">Tarifa: $15 por km desde nuestra ubicación.</span>
         </div>
 
         <div class="form-group">
-            <label>Colonia / Sector:</label>
-            <input type="text" id="cot-colonia" placeholder="Ej: Casa Blanca">
+            <label>Colonia / Sector / Municipio:</label>
+            <input type="text" id="cot-colonia" placeholder="Ej: Casa Blanca, Guadalupe">
         </div>
 
         <button class="btn-calcular" onclick="realizarCalculo()">Calcular Costo Total</button>
@@ -135,7 +130,7 @@
         <div id="res-box">
             <p>Equipo: <strong id="res-nom-equipo"></strong></p>
             <p>Renta por días: <strong>$<span id="res-renta"></span></strong></p>
-            <p>Flete: <strong>$<span id="res-flete"></span></strong></p>
+            <p>Flete (<span id="res-dist-km"></span> km): <strong>$<span id="res-flete"></span></strong></p>
             <hr>
             <h4 style="margin: 0; color: #002752; font-size: 22px;">Total a Pagar: $<span id="res-total"></span></h4>
             
@@ -150,7 +145,7 @@
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         
         <div class="nota-flete">
-            <strong>AVISO IMPORTANTE:</strong> El costo del flete varía dependiendo de la ubicación de la obra.
+            <strong>AVISO IMPORTANTE:</strong> El costo del flete se calcula a $15 por kilómetro desde nuestra ubicación en Juárez.
         </div>
 
         <div class="grid">
@@ -302,24 +297,41 @@
 
     <script>
         function realizarCalculo() {
+            // Valores de entrada
             const precioBase = parseFloat(document.getElementById('cot-equipo').value);
             const dias = parseInt(document.getElementById('cot-dias').value);
-            const flete = parseFloat(document.getElementById('cot-municipio').value);
+            const kilometros = parseFloat(document.getElementById('cot-km').value) || 0;
             const equipoTexto = document.getElementById('cot-equipo').options[document.getElementById('cot-equipo').selectedIndex].text;
-            const municipioTexto = document.getElementById('cot-municipio').options[document.getElementById('cot-municipio').selectedIndex].text;
             const colonia = document.getElementById('cot-colonia').value || "No especificada";
 
+            // Lógica de costo: $15 por km
+            const costoFlete = kilometros * 15;
             const totalRenta = precioBase * dias;
-            const granTotal = totalRenta + flete;
+            const granTotal = totalRenta + costoFlete;
 
+            // Mostrar resultados en la caja blanca
             document.getElementById('res-nom-equipo').innerText = equipoTexto;
             document.getElementById('res-renta').innerText = totalRenta;
-            document.getElementById('res-flete').innerText = flete;
+            document.getElementById('res-dist-km').innerText = kilometros;
+            document.getElementById('res-flete').innerText = costoFlete;
             document.getElementById('res-total').innerText = granTotal;
             document.getElementById('res-box').style.display = 'block';
 
-            const mensaje = encodeURIComponent(`Hola GAP, deseo rentar:\n- Equipo: ${equipoTexto}\n- Días: ${dias}\n- Ubicación: ${colonia}, ${municipioTexto}\n- Total a pagar: $${granTotal}`);
+            // Preparar mensaje para WhatsApp
+            const mensaje = encodeURIComponent(
+                `Hola GAP, me interesa rentar:\n` +
+                `- Equipo: ${equipoTexto}\n` +
+                `- Días: ${dias}\n` +
+                `- Ubicación: ${colonia}\n` +
+                `- Distancia: ${kilometros} km\n` +
+                `- Costo Renta: $${totalRenta}\n` +
+                `- Costo Flete ($15/km): $${costoFlete}\n` +
+                `- Total a pagar: $${granTotal}`
+            );
             document.getElementById('btn-whatsapp-cot').href = `https://wa.me/528119988053?text=${mensaje}`;
+            
+            // Desplazar la vista al resultado
+            document.getElementById('res-box').scrollIntoView({ behavior: 'smooth' });
         }
 
         function cerrarRes() {
