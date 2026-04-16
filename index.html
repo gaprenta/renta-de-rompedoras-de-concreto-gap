@@ -6,21 +6,18 @@
     <title>G-A-P | Renta de Rompedoras y Vibradores</title>
     
     <style>
-        /* Paleta Caterpillar: Amarillo #FFCD00, Azul Oscuro #002752 */
         body { font-family: 'Arial Black', sans-serif; margin: 0; background: #fff; color: #000; line-height: 1.6; }
         header { background: #FFCD00; border-bottom: 8px solid #002752; text-align: center; }
         .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
         
-        .hero { background: #002752; color: #fff; padding: 50px 20px; text-align: center; }
-        .hero h2 { color: #FFCD00; margin: 0; text-transform: uppercase; font-size: 32px; }
-        .hero p { margin: 10px 0 0; font-size: 18px; font-family: 'Arial', sans-serif; font-weight: bold; color: #f4f4f4; }
+        .hero { background: #002752; color: #fff; padding: 40px 20px; text-align: center; }
+        .hero h2 { color: #FFCD00; margin: 0; text-transform: uppercase; font-size: 24px; } /* Slogan más pequeño */
+        .hero p { margin: 8px 0 0; font-size: 16px; font-family: 'Arial', sans-serif; font-weight: bold; color: #f4f4f4; }
 
-        /* Sección Empresa */
         .seccion-empresa { max-width: 1000px; margin: 40px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; font-family: 'Arial', sans-serif; }
         .empresa-card { border-left: 5px solid #FFCD00; padding-left: 15px; }
         .empresa-card h3 { color: #002752; text-transform: uppercase; margin-top: 0; }
 
-        /* Cotizador */
         .cotizador-container { max-width: 650px; margin: 40px auto; background: #f4f4f4; border: 5px solid #FFCD00; padding: 30px; border-radius: 15px; font-family: 'Arial', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; color: #002752; }
@@ -29,21 +26,22 @@
         .zona-status { background: #002752; color: #FFCD00; padding: 10px; border-radius: 5px; font-size: 12px; margin-top: 5px; font-weight: bold; text-align: center; }
 
         .btn-calcular { width: 100%; background: #000; color: #FFCD00; padding: 20px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 18px; transition: 0.3s; }
-        .btn-calcular:hover { background: #333; }
-
+        
         #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #002752; display: none; border-radius: 10px; }
         
-        /* Inventario de Equipos */
+        /* Botones de colores Verde y Rojo */
+        .botones-confirmar { display: flex; gap: 10px; margin-top: 15px; }
+        .btn-confirmar { flex: 1; background: #25D366; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
+        .btn-rechazar { flex: 1; background: #FF3B30; color: white; padding: 15px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+
         .seccion-equipos { padding: 50px 20px; max-width: 1200px; margin: 0 auto; background: #fafafa; }
         .seccion-equipos h2 { text-align: center; text-transform: uppercase; color: #002752; margin-bottom: 40px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .card { border: 3px solid #002752; display: flex; flex-direction: column; text-align: center; background: #fff; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: #FFCD00; }
         .card img { width: 100%; height: 200px; object-fit: contain; padding: 10px; background: #fff; }
         .card h4 { background: #002752; color: #FFCD00; margin: 0; padding: 12px; text-transform: uppercase; font-size: 14px; }
         .card p { font-family: 'Arial', sans-serif; padding: 10px; font-size: 13px; font-weight: bold; flex-grow: 1; margin: 0; color: #444; }
 
-        /* Footer y Horarios */
         footer { background: #000; color: #fff; padding: 50px 20px; border-top: 8px solid #FFCD00; margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; font-family: 'Arial', sans-serif; }
         .footer-item h3 { color: #FFCD00; text-transform: uppercase; margin-bottom: 20px; font-size: 18px; }
@@ -58,17 +56,17 @@
 
 <section class="hero">
     <h2>Su mejor opción en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey</h2>
-    <p>Especialistas en Renta de Rompedoras de Concreto y Vibradores Profesionales</p>
+    <p>Calidad y Potencia en Cada Obra</p>
 </section>
 
 <section class="seccion-empresa">
     <div class="empresa-card">
         <h3>Nuestra Misión</h3>
-        <p>Proveer maquinaria de demolición y compactación de alta eficiencia, garantizando la continuidad de sus obras mediante equipos en excelente estado y un servicio logístico puntual.</p>
+        <p>Proveer maquinaria de alta eficiencia, garantizando la continuidad de sus obras mediante equipos en excelente estado y un servicio logístico puntual.</p>
     </div>
     <div class="empresa-card">
         <h3>Nuestra Visión</h3>
-        <p>Ser el aliado estratégico número uno para constructores y contratistas en Nuevo León, destacando por nuestra seriedad, calidad técnica y respuesta inmediata.</p>
+        <p>Ser el aliado estratégico número uno en Nuevo León, destacando por nuestra seriedad, calidad técnica y respuesta inmediata.</p>
     </div>
     <div class="empresa-card">
         <h3>Valores</h3>
@@ -84,7 +82,7 @@
 
     <div class="form-group">
         <label>Dirección de la Obra (Calle y Número):</label>
-        <input type="text" id="direccion" placeholder="Ej. Av. Teófilo Salinas #500">
+        <input type="text" id="direccion" placeholder="Ej. Calle Roble #402">
     </div>
 
     <div class="form-group">
@@ -101,15 +99,15 @@
     <div class="form-group">
         <label>Equipo Requerido:</label>
         <select id="equipo">
-            <option value="300">Rompedora 8kg (Ligera)</option>
-            <option value="300">Rompedora 12kg (Pisos)</option>
-            <option value="350">Rompedora 15kg (Muros/Firmes)</option>
-            <option value="400">Rompedora 25kg (Uso Rudo)</option>
-            <option value="450">Rompedora 27kg (Industrial)</option>
+            <option value="300">Rompedora 8kg</option>
+            <option value="300">Rompedora 12kg</option>
+            <option value="350">Rompedora 15kg</option>
+            <option value="400">Rompedora 25kg</option>
+            <option value="450">Rompedora 27kg</option>
             <option value="300">Vibrador Eléctrico CAT</option>
-            <option value="300">Vibrador V1 (Compacto)</option>
-            <option value="200">Vibrador V2 (Estándar)</option>
-            <option value="200">Vibrador V3 (Reforzado)</option>
+            <option value="300">Vibrador V1</option>
+            <option value="200">Vibrador V2</option>
+            <option value="200">Vibrador V3</option>
         </select>
     </div>
 
@@ -130,24 +128,24 @@
         <h2 style="margin:0; color:#002752;">TOTAL NETO: $<span id="res-total"></span></h2>
         
         <div class="botones-confirmar">
-            <a href="#" id="wa-link" class="btn-confirmar" target="_blank">ACEPTAR Y ENVIAR</a>
+            <a href="#" id="wa-link" class="btn-confirmar">ACEPTAR Y ENVIAR</a>
             <button class="btn-rechazar" onclick="rechazarPedido()">CANCELAR</button>
         </div>
     </div>
 </div>
 
 <section class="seccion-equipos">
-    <h2>Nuestro Inventario Disponible</h2>
+    <h2>Nuestro Inventario</h2>
     <div class="grid">
-        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ideal para ranurado y demolición ligera en muros.</p></div>
-        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Efectiva para retiro de azulejo y pisos de cerámica.</p></div>
-        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia intermedia para firmes y losas delgadas.</p></div>
-        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Equipo robusto para banquetas y concreto reforzado.</p></div>
-        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Máxima potencia para asfalto y concreto industrial.</p></div>
-        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Compactación de alta frecuencia, motor sellado.</p></div>
-        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Diseño portátil para columnas y castillos.</p></div>
-        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Equipo estándar para losas de cimentación.</p></div>
-        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Uso industrial continuo, máxima durabilidad.</p></div>
+        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ligera para muros y ranurado.</p></div>
+        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Efectiva para retiro de azulejo.</p></div>
+        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para firmes y losas.</p></div>
+        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Robustez para concreto reforzado.</p></div>
+        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Máxima potencia industrial.</p></div>
+        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Alta frecuencia, motor sellado.</p></div>
+        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Portátil para columnas.</p></div>
+        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Estándar para losas.</p></div>
+        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Uso industrial continuo.</p></div>
     </div>
 </section>
 
@@ -155,7 +153,7 @@
     <div class="footer-grid">
         <div class="footer-item">
             <h3>G-A-P Renta de Rompedoras</h3>
-            <p>Especialistas en equipo para construcción. Brindamos servicio en todo el área metropolitana de Monterrey.</p>
+            <p>Servicio en todo el área metropolitana.</p>
             <p><strong>WhatsApp:</strong> 8119988053</p>
             <p><strong>Base:</strong> Valle Sur, Juárez, N.L.</p>
         </div>
@@ -201,7 +199,7 @@
         }
 
         if (zonaEncontrada) {
-            infoZona.innerText = "✓ Cobertura Identificada: " + zonaEncontrada.zona;
+            infoZona.innerText = "✓ Ubicación Identificada: " + zonaEncontrada.zona;
             infoZona.style.background = "#25D366"; 
             infoZona.style.color = "#fff";
             fleteInput.value = zonaEncontrada.costo;
@@ -224,7 +222,7 @@
         const eSelect = document.getElementById('equipo');
         const eNom = eSelect.options[eSelect.selectedIndex].text;
         
-        if(!nom || !col || !dir) { alert("Por favor complete Nombre, Dirección y Colonia."); return; }
+        if(!nom || !col || !dir) { alert("Complete Nombre, Dirección y Colonia."); return; }
 
         const total = (parseFloat(eSelect.value) * d) + flete;
 
@@ -232,15 +230,13 @@
             <b>Cliente:</b> ${nom}<br>
             <b>Ubicación:</b> ${col}<br>
             <b>Equipo:</b> ${eNom}<br>
-            <b>Tiempo:</b> ${d} día(s)<br>
-            <b>Servicio:</b> Entrega a domicilio y recolección incluida.
+            <b>Tiempo:</b> ${d} día(s)
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        const mensajeWA = `*COTIZACIÓN G-A-P*\n\n*Cliente:* ${nom}\n*WhatsApp:* ${tel}\n*Dirección:* ${dir}\n*Colonia:* ${col}\n*Equipo:* ${eNom}\n*Días:* ${d}\n--------------------------\n*TOTAL NETO: $${total}*`;
+        const mensajeWA = `*COTIZACIÓN G-A-P*\n\n*Cliente:* ${nom}\n*Dirección:* ${dir}\n*Colonia:* ${col}\n*Equipo:* ${eNom}\n*Días:* ${d}\n*Total:* $${total}`;
         document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
-        window.location.hash = '#res-box';
     }
 
     function rechazarPedido() { document.getElementById('res-box').style.display = 'none'; }
