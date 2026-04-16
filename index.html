@@ -49,21 +49,33 @@
         .card { border: 4px solid #002752; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; transform: translateY(-8px); }
         .card-img { width: 100%; height: 280px; object-fit: contain; border-bottom: 4px solid #FFCD00; background: #fdfdfd; }
+        
+        /* LEYENDA DISPONIBILIDAD */
+        .disponibilidad-txt { background: #f8f8f8; color: #d9534f; font-size: 10px; text-align: center; padding: 5px; font-family: sans-serif; border-bottom: 1px solid #eee; }
+
         .card-header-kg { background: #333; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #002752; }
         .card-header-vibrador { background: #002752; color: #FFCD00; padding: 20px; text-align: center; border-bottom: 5px solid #FFCD00; }
         .modelo-txt { font-weight: 900; font-size: 1.3em; text-transform: uppercase; }
         .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
-        .precio-container { background: #000; color: #FFCD00; padding: 10px; text-align: center; }
-        .precio-tag { display: block; font-size: 1.4em; }
-        .flete-tag { display: block; font-size: 0.8em; font-family: 'Arial', sans-serif; font-weight: bold; color: #fff; margin-top: 2px; }
+        
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
         .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
-        .btn-rentar { display: block; background: #002752; color: #FFCD00; text-align: center; padding: 18px; text-decoration: none; font-weight: 900; text-transform: uppercase; }
+        
+        .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
+        .btn-cotizar:hover { background: #001a38; }
+
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; }
+        .modal-content input { width: 100%; padding: 12px; margin: 8px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
+        .modal-content h3 { color: #002752; margin-bottom: 15px; }
+        .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+        .btn-send { background: #25D366; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .btn-close { background: #d9534f; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
 
         .footer-info { background: #000; color: #fff; padding: 60px 20px 120px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
-        
         .ws-flotante { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 900; z-index: 9999; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
     </style>
 </head>
@@ -120,153 +132,112 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
                 <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$300 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%208kg" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 8kg')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V1)</span></div>
                 <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$300 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2012kg" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 12kg V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG (V2)</span></div>
                 <img src="12.1.jpg" alt="Rompedora 12.1kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$300 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Alto impacto</li>
                         <li><span class="icon-usage">GAP</span> Uso continuo</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2012kg%20V2" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 12kg V2')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V1)</span></div>
                 <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$350 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2015kg" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 15kg V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG (V2)</span></div>
                 <img src="15.1.jpg" alt="Rompedora 15.1kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$350 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Cimientos reforzados</li>
                         <li><span class="icon-usage">GAP</span> Máximo poder</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2015kg%20V2" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 15kg V2')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V1)</span></div>
                 <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$400 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
                         <li><span class="icon-usage">GAP</span> Losas de concreto</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2025kg" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 25kg V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V2)</span></div>
                 <img src="25.1.jpg" alt="Rompedora 25.1kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$400 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Pavimentos gruesos</li>
                         <li><span class="icon-usage">GAP</span> Demolición pesada</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2025kg%20V2" class="btn-rentar">Rentar Equipo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V3)</span></div>
-                <img src="25.2.jpg" alt="Rompedora 25.2kg" class="card-img">
-                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$400 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Concreto armado</li>
-                        <li><span class="icon-usage">GAP</span> Uso industrial</li>
-                    </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2025kg%20V3" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 25kg V2')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
                 <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$450 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
                         <li><span class="icon-usage">GAP</span> Zapatas y drenaje</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20la%20rompedora%20de%2027kg" class="btn-rentar">Rentar Equipo</a>
+                    <button onclick="abrirModal('Rompedora de 27kg')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
         </div>
@@ -276,70 +247,46 @@
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Eléctrico CAT</span></div>
                 <img src="Vibrador.jpg" alt="Vibrador Amarillo" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">1.5 HP | Alta Frecuencia</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$300 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Compactación de losas</li>
                         <li><span class="icon-usage-v">GAP</span> Acabado profesional</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20el%20Vibrador%20CAT" class="btn-rentar">Rentar Ahora</a>
+                    <button onclick="abrirModal('Vibrador Eléctrico CAT')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Portátil V1</span></div>
                 <img src="vibrador1.jpg" alt="Vibrador 1" class="card-img">
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-specs-bar">Chicote Reforzado</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$300 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Ideal para castillos</li>
                         <li><span class="icon-usage-v">GAP</span> Fácil manejo</li>
                     </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20el%20Vibrador%20V1" class="btn-rentar">Rentar Ahora</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Industrial V2</span></div>
-                <img src="vibrador2.jpg" alt="Vibrador 2" class="card-img">
-                <div class="card-specs-bar">Uso Heavy Duty</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$200 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Motores de alto rendimiento</li>
-                    </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20el%20Vibrador%20V2" class="btn-rentar">Rentar Ahora</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador de Precisión V3</span></div>
-                <img src="vibrador3.jpg" alt="Vibrador 3" class="card-img">
-                <div class="card-specs-bar">Cabezal de Acero</div>
-                <div class="precio-container">
-                    <span class="precio-tag">$200 / 24 hrs</span>
-                    <span class="flete-tag">+ Flete según zona</span>
-                </div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Máxima eliminación de aire</li>
-                    </ul>
-                    <a href="https://wa.me/528119988053?text=Hola%20GAP,%20me%20interesa%20rentar%20el%20Vibrador%20V3" class="btn-rentar">Rentar Ahora</a>
+                    <button onclick="abrirModal('Vibrador Portátil V1')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
         </div>
     </main>
+
+    <div id="modalCotizacion" class="modal">
+        <div class="modal-content">
+            <h3>Solicitud de Cotización</h3>
+            <p id="equipoTxt" style="font-weight: bold; color: #002752;"></p>
+            <input type="text" id="nombre" placeholder="Tu Nombre">
+            <input type="text" id="colonia" placeholder="Tu Colonia">
+            <input type="text" id="municipio" placeholder="Tu Municipio">
+            <div class="modal-btns">
+                <button class="btn-close" onclick="cerrarModal()">RECHAZAR</button>
+                <button class="btn-send" onclick="enviarWhatsapp()">CONTINUAR</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer-info">
         <div>
@@ -358,6 +305,35 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="25" alt="WhatsApp">
         811-998-80-53
     </a>
+
+    <script>
+        let equipoSeleccionado = "";
+
+        function abrirModal(nombreEquipo) {
+            equipoSeleccionado = nombreEquipo;
+            document.getElementById('equipoTxt').innerText = "Equipo: " + nombreEquipo;
+            document.getElementById('modalCotizacion').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modalCotizacion').style.display = 'none';
+        }
+
+        function enviarWhatsapp() {
+            const nom = document.getElementById('nombre').value;
+            const col = document.getElementById('colonia').value;
+            const mun = document.getElementById('municipio').value;
+
+            if(nom == "" || col == "" || mun == "") {
+                alert("Por favor completa tus datos para la cotización");
+                return;
+            }
+
+            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}`;
+            window.open(`https://wa.me/528119988053?text=${mensaje}`, '_blank');
+            cerrarModal();
+        }
+    </script>
 
 </body>
 </html>
