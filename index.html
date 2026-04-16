@@ -18,43 +18,38 @@
         .empresa-card { border-left: 5px solid #FFCD00; padding-left: 15px; }
         .empresa-card h3 { color: #002752; text-transform: uppercase; margin-top: 0; }
 
-        /* ESTILO TIPO DIDI/UBER */
-        .cotizador-container { max-width: 650px; margin: 40px auto; background: #fff; border: 4px solid #002752; padding: 30px; border-radius: 20px; font-family: 'Arial', sans-serif; box-shadow: 0 15px 40px rgba(0,0,0,0.15); scroll-margin-top: 20px; }
-        .form-group { margin-bottom: 20px; position: relative; }
-        .form-group label { display: block; font-weight: 900; margin-bottom: 8px; font-size: 12px; color: #555; text-transform: uppercase; }
-        .form-group input, .form-group select { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-weight: bold; box-sizing: border-box; font-size: 16px; transition: 0.3s; background: #f9f9f9; }
-        .form-group input:focus { border-color: #002752; background: #fff; outline: none; }
-        
-        /* CUADRO DE TARIFA TIPO APP */
-        .tarifa-dinamica { background: #002752; color: #fff; padding: 20px; border-radius: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .tarifa-dinamica .label-envio { font-size: 14px; color: #FFCD00; font-weight: bold; text-transform: uppercase; }
-        .tarifa-dinamica .precio-envio { font-size: 24px; font-weight: 900; }
+        /* FORMULARIO DE COTIZACIÓN (OCULTO INICIALMENTE) */
+        .cotizador-container { max-width: 650px; margin: 40px auto; background: #f4f4f4; border: 5px solid #002752; padding: 30px; border-radius: 20px; font-family: 'Arial', sans-serif; display: none; scroll-margin-top: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 13px; color: #002752; text-transform: uppercase; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 2px solid #002752; border-radius: 8px; font-weight: bold; box-sizing: border-box; font-size: 15px; }
 
-        .btn-calcular { width: 100%; background: #FFCD00; color: #002752; padding: 20px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 20px; border-radius: 10px; box-shadow: 0 5px 0 #ccaa00; transition: 0.2s; }
-        .btn-calcular:active { transform: translateY(4px); box-shadow: 0 1px 0 #ccaa00; }
+        .btn-calcular { width: 100%; background: #002752; color: #FFCD00; padding: 20px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 18px; border-radius: 8px; margin-top: 10px; }
         
-        #res-box { margin-top: 25px; padding: 25px; background: #f0fdf4; border: 3px solid #22c55e; border-radius: 15px; display: none; }
+        #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #25D366; border-radius: 15px; text-align: center; display: none; }
         
         .botones-confirmar { display: flex; gap: 10px; margin-top: 20px; }
-        .btn-confirmar { flex: 2; background: #25D366; color: white; padding: 18px; text-decoration: none; text-align: center; border-radius: 10px; font-weight: bold; text-transform: uppercase; font-size: 16px; }
-        .btn-rechazar { flex: 1; background: #ef4444; color: white; padding: 18px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .btn-confirmar { flex: 1; background: #25D366; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 8px; font-weight: bold; text-transform: uppercase; }
+        .btn-rechazar { flex: 1; background: #FF3B30; color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
 
         /* INVENTARIO */
         .seccion-equipos { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
-        .seccion-equipos h2 { text-align: center; text-transform: uppercase; color: #002752; margin-bottom: 40px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .card { border: 3px solid #002752; display: flex; flex-direction: column; text-align: center; background: #fff; border-radius: 10px; overflow: hidden; }
-        .card img { width: 100%; height: 200px; object-fit: contain; padding: 10px; background: #fff; }
+        .card img { width: 100%; height: 200px; object-fit: contain; padding: 10px; }
         .card h4 { background: #002752; color: #FFCD00; margin: 0; padding: 12px; text-transform: uppercase; font-size: 14px; }
-        .card p { font-family: 'Arial', sans-serif; padding: 15px; font-size: 13px; font-weight: bold; flex-grow: 1; margin: 0; color: #444; }
-        .btn-card { background: #FFCD00; color: #002752; border: none; padding: 12px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
+        .card p { font-family: 'Arial', sans-serif; padding: 15px; font-size: 13px; font-weight: bold; flex-grow: 1; }
+        
+        /* BOTONES DE TARJETA */
+        .card-actions { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid #002752; }
+        .btn-card-cotizar { background: #FFCD00; border: none; padding: 12px; font-weight: bold; cursor: pointer; text-transform: uppercase; border-right: 1px solid #002752; }
+        .btn-card-wa { background: #25D366; color: white; text-decoration: none; padding: 12px; font-weight: bold; text-transform: uppercase; display: flex; align-items: center; justify-content: center; }
 
         footer { background: #000; color: #fff; padding: 50px 20px; border-top: 8px solid #FFCD00; margin-top: 50px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; font-family: 'Arial', sans-serif; }
-        .footer-item h3 { color: #FFCD00; text-transform: uppercase; margin-bottom: 20px; font-size: 18px; }
-        .horario-lista { list-style: none; padding: 0; margin: 0; }
-        .horario-lista li { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #333; font-size: 14px; }
-        .horario-lista li span { color: #FFCD00; font-weight: bold; }
+        .footer-item h3 { color: #FFCD00; text-transform: uppercase; margin-bottom: 20px; }
+        .horario-lista { list-style: none; padding: 0; }
+        .horario-lista li { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #333; }
     </style>
 </head>
 <body>
@@ -62,8 +57,8 @@
 <header><img src="logotipo1.png" alt="G-A-P Renta de Rompedoras" class="header-logo-img"></header>
 
 <section class="hero">
-    <h2>SERVICIO DE RENTA EXPRESS</h2>
-    <p>Calcula tu tarifa de envío y renta al instante</p>
+    <h2>CALIDAD Y POTENCIA EN CADA OBRA</h2>
+    <p>Renta de Rompedoras y Vibradores en todo Nuevo León</p>
 </section>
 
 <section class="seccion-empresa">
@@ -81,167 +76,153 @@
     </div>
 </section>
 
-<div class="cotizador-container" id="form-pedidos">
+<div class="cotizador-container" id="cotizador">
+    <h2 style="text-align:center; color:#002752; margin-top:0;">DATOS DE TU RENTA</h2>
+    
     <div class="form-group">
-        <label>¿A nombre de quién?</label>
-        <input type="text" id="nombre" placeholder="Nombre completo">
+        <label>Nombre Completo:</label>
+        <input type="text" id="nombre" placeholder="¿A quién dirigimos la cotización?">
     </div>
 
     <div class="form-group">
-        <label>¿Dónde es la entrega? (Calle y Número)</label>
-        <input type="text" id="direccion" placeholder="Ej. Av. Benito Juárez #123">
+        <label>Dirección de la Obra:</label>
+        <input type="text" id="direccion" placeholder="Calle y número">
     </div>
 
     <div class="form-group">
-        <label>¿En qué colonia estás?</label>
-        <input type="text" id="coloniaInput" placeholder="Busca tu colonia..." onkeyup="detectarUber()">
-    </div>
-
-    <div class="tarifa-dinamica">
-        <div>
-            <span class="label-envio">Costo de Envío</span>
-            <div style="font-size: 12px; color: #ccc;">Desde Valle Sur, Juárez</div>
-        </div>
-        <div class="precio-envio">$<span id="displayFlete">150</span></div>
-    </div>
-
-    <div class="form-group">
-        <label>Selecciona tu equipo</label>
-        <select id="equipo" onchange="actualizarPrecio()">
-            <option value="300">Rompedora 8kg</option>
-            <option value="300">Rompedora 12kg</option>
-            <option value="350">Rompedora 15kg</option>
-            <option value="400">Rompedora 25kg</option>
-            <option value="450">Rompedora 27kg</option>
-            <option value="300">Vibrador Eléctrico CAT</option>
-            <option value="300">Vibrador V1</option>
-            <option value="200">Vibrador V2</option>
-            <option value="200">Vibrador V3</option>
+        <label>Municipio (Zona de entrega):</label>
+        <select id="zona">
+            <option value="150">Zona 1: Juárez</option>
+            <option value="200">Zona 2: Guadalupe</option>
+            <option value="250">Zona 3: Apodaca</option>
+            <option value="300">Zona 4: San Nicolás</option>
+            <option value="350">Zona 5: Monterrey Centro / Sur</option>
+            <option value="450">Zona 6: Monterrey Norte / Cumbres</option>
+            <option value="500">Zona 7: San Pedro / Santa Catarina</option>
+            <option value="600">Zona 8: García / Santiago / Cadereyta</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>¿Cuántos días lo necesitas?</label>
-        <input type="number" id="dias" value="1" min="1" onchange="actualizarPrecio()">
+        <label>Equipo Seleccionado:</label>
+        <select id="equipo">
+            <option value="300">Rompedora 8kg ($300)</option>
+            <option value="300">Rompedora 12kg ($300)</option>
+            <option value="350">Rompedora 15kg ($350)</option>
+            <option value="400">Rompedora 25kg ($400)</option>
+            <option value="450">Rompedora 27kg ($450)</option>
+            <option value="300">Vibrador Eléctrico CAT ($300)</option>
+            <option value="300">Vibrador V1 ($300)</option>
+            <option value="200">Vibrador V2 ($200)</option>
+            <option value="200">Vibrador V3 ($200)</option>
+        </select>
     </div>
 
-    <input type="hidden" id="costoFleteHidden" value="150">
+    <div class="form-group">
+        <label>Días de Renta:</label>
+        <input type="number" id="dias" value="1" min="1">
+    </div>
 
-    <button class="btn-calcular" onclick="mostrarResumen()">Solicitar Presupuesto</button>
+    <div class="form-group">
+        <label>Teléfono (WhatsApp):</label>
+        <input type="tel" id="telefono" placeholder="10 dígitos">
+    </div>
+
+    <button class="btn-calcular" onclick="calcularTotal()">Calcular Presupuesto</button>
 
     <div id="res-box">
-        <h3 style="margin:0; color:#166534; font-size: 16px;">TARIFA TOTAL CALCULADA</h3>
-        <p id="res-detalles" style="font-size: 14px; margin: 10px 0;"></p>
-        <div style="font-size: 32px; font-weight: 900; color: #002752;">$<span id="res-total"></span></div>
-        <div style="font-size: 12px; color: #666;">*Incluye entrega y recolección a domicilio.</div>
-        
+        <h3 style="margin:0; color:#002752;">TOTAL A PAGAR</h3>
+        <p id="detalles-final" style="font-size: 14px; margin: 10px 0;"></p>
+        <div style="background:#002752; color:#FFCD00; padding:15px; border-radius:10px;">
+            <strong style="font-size:32px;">$<span id="total-monto"></span></strong>
+        </div>
         <div class="botones-confirmar">
             <a href="#" id="wa-link" class="btn-confirmar">CONFIRMAR PEDIDO</a>
-            <button class="btn-rechazar" onclick="rechazarPedido()">ATRÁS</button>
+            <button class="btn-rechazar" onclick="document.getElementById('res-box').style.display='none'">EDITAR</button>
         </div>
     </div>
 </div>
 
 <section class="seccion-equipos">
-    <h2>Nuestro Inventario</h2>
+    <h2>NUESTRO INVENTARIO</h2>
     <div class="grid">
-        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ligera para muros y ranurado.</p><button class="btn-card" onclick="pedirEquipo(0)">Pedir</button></div>
-        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Efectiva para retiro de azulejo.</p><button class="btn-card" onclick="pedirEquipo(1)">Pedir</button></div>
-        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para firmes y losas.</p><button class="btn-card" onclick="pedirEquipo(2)">Pedir</button></div>
-        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Robustez para concreto reforzado.</p><button class="btn-card" onclick="pedirEquipo(3)">Pedir</button></div>
-        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Máxima potencia industrial.</p><button class="btn-card" onclick="pedirEquipo(4)">Pedir</button></div>
-        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Alta frecuencia, motor sellado.</p><button class="btn-card" onclick="pedirEquipo(5)">Pedir</button></div>
-        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Portátil para columnas.</p><button class="btn-card" onclick="pedirEquipo(6)">Pedir</button></div>
-        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Estándar para losas.</p><button class="btn-card" onclick="pedirEquipo(7)">Pedir</button></div>
-        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Uso industrial continuo.</p><button class="btn-card" onclick="pedirEquipo(8)">Pedir</button></div>
+        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Ideal para muros y ranurado.</p>
+            <div class="card-actions">
+                <button class="btn-card-cotizar" onclick="activarCotizador(0)">Cotizar</button>
+                <a href="https://wa.me/528119988053" class="btn-card-wa">WhatsApp</a>
+            </div>
+        </div>
+        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Potencia para firmes y banquetas.</p>
+            <div class="card-actions">
+                <button class="btn-card-cotizar" onclick="activarCotizador(2)">Cotizar</button>
+                <a href="https://wa.me/528119988053" class="btn-card-wa">WhatsApp</a>
+            </div>
+        </div>
+        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Uso industrial rudo.</p>
+            <div class="card-actions">
+                <button class="btn-card-cotizar" onclick="activarCotizador(4)">Cotizar</button>
+                <a href="https://wa.me/528119988053" class="btn-card-wa">WhatsApp</a>
+            </div>
+        </div>
+        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Alta frecuencia profesional.</p>
+            <div class="card-actions">
+                <button class="btn-card-cotizar" onclick="activarCotizador(5)">Cotizar</button>
+                <a href="https://wa.me/528119988053" class="btn-card-wa">WhatsApp</a>
+            </div>
+        </div>
     </div>
 </section>
 
 <footer>
     <div class="footer-grid">
         <div class="footer-item">
-            <h3>G-A-P Renta de Rompedoras</h3>
+            <h3>G-A-P Renta</h3>
             <p><strong>WhatsApp:</strong> 8119988053</p>
             <p><strong>Base:</strong> Valle Sur, Juárez, N.L.</p>
         </div>
         <div class="footer-item">
             <h3>Horarios</h3>
             <ul class="horario-lista">
-                <li>Lunes a Viernes <span>08:00 AM - 08:00 PM</span></li>
-                <li>Sábado <span>09:00 AM - 05:00 PM</span></li>
-                <li>Domingo <span>09:00 AM - 02:00 PM</span></li>
+                <li>Lun-Vie <span>08:00-20:00</span></li>
+                <li>Sáb <span>09:00-17:00</span></li>
+                <li>Dom <span>09:00-14:00</span></li>
             </ul>
         </div>
     </div>
 </footer>
 
 <script>
-    // LÓGICA DE PRECIOS OCULTA (15 pesos por km)
-    const baseZonas = [
-        { palabras: ["valle sur", "san roque", "santa monica", "anzures", "juarez centro"], km: 7 },
-        { palabras: ["pueblo nuevo", "huinala", "tres caminos", "eloy cavazos", "pablo livas", "faisanes"], km: 12 },
-        { palabras: ["guadalupe centro", "la pastora", "la fe", "centro de apodaca", "san miguel"], km: 20 },
-        { palabras: ["lindavista", "universidad", "mty centro", "zona tec", "obispado", "anahuac", "san nicolas"], km: 26 },
-        { palabras: ["san jeronimo", "san pedro", "valle oriente", "cumbres", "santa catarina"], km: 38 },
-        { palabras: ["garcia", "el uro", "santiago", "carretera nacional"], km: 48 }
-    ];
-
-    function detectarUber() {
-        const input = document.getElementById('coloniaInput').value.toLowerCase();
-        const displayFlete = document.getElementById('displayFlete');
-        const fleteHidden = document.getElementById('costoFleteHidden');
-        
-        if (input.length < 3) return;
-
-        let kmFinal = 22; // Default
-        let encontrado = false;
-
-        for (let z of baseZonas) {
-            for (let p of z.palabras) {
-                if (input.includes(p)) { kmFinal = z.km; encontrado = true; break; }
-            }
-            if (encontrado) break;
-        }
-
-        let costoFlete = kmFinal * 15;
-        if (costoFlete < 150) costoFlete = 150;
-
-        displayFlete.innerText = costoFlete;
-        fleteHidden.value = costoFlete;
-    }
-
-    function pedirEquipo(index) {
+    function activarCotizador(index) {
+        document.getElementById('cotizador').style.display = 'block';
         document.getElementById('equipo').selectedIndex = index;
-        document.getElementById('form-pedidos').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('cotizador').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function mostrarResumen() {
+    function calcularTotal() {
         const nom = document.getElementById('nombre').value;
-        const col = document.getElementById('coloniaInput').value;
         const dir = document.getElementById('direccion').value;
-        const flete = parseFloat(document.getElementById('costoFleteHidden').value);
-        const d = parseInt(document.getElementById('dias').value);
+        const tel = document.getElementById('telefono').value;
+        const dias = parseInt(document.getElementById('dias').value);
+        const flete = parseFloat(document.getElementById('zona').value);
+        const zNom = document.getElementById('zona').options[document.getElementById('zona').selectedIndex].text;
         const eSelect = document.getElementById('equipo');
         const eNom = eSelect.options[eSelect.selectedIndex].text;
-        
-        if(!nom || !col || !dir) { alert("Ingresa tu dirección para calcular la tarifa."); return; }
+        const precioEquipo = parseFloat(eSelect.value);
 
-        const rentaTotal = parseFloat(eSelect.value) * d;
-        const total = rentaTotal + flete;
+        if(!nom || !dir || !tel) { alert("Por favor completa todos los datos."); return; }
 
-        document.getElementById('res-detalles').innerHTML = `
-            <b>Servicio:</b> Renta de ${eNom}<br>
-            <b>Destino:</b> ${col}<br>
-            <b>Días:</b> ${d}
+        const total = (precioEquipo * dias) + flete;
+
+        document.getElementById('detalles-final').innerHTML = `
+            ${eNom} x ${dias} día(s)<br>
+            Entrega en: ${zNom.split(':')[1]}
         `;
-        document.getElementById('res-total').innerText = total;
+        document.getElementById('total-monto').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        const mensajeWA = `*NUEVO PEDIDO G-A-P*\n\n*Cliente:* ${nom}\n*Dirección:* ${dir}\n*Colonia:* ${col}\n*Equipo:* ${eNom}\n*Días:* ${d}\n*Tarifa Total:* $${total}`;
-        document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
+        const msj = `*PEDIDO G-A-P*\n*Cliente:* ${nom}\n*Dirección:* ${dir}\n*Tel:* ${tel}\n*Equipo:* ${eNom}\n*Días:* ${dias}\n*Zona:* ${zNom}\n*TOTAL:* $${total}`;
+        document.getElementById('wa-link').href = `https://wa.me/528119988053?text=${encodeURIComponent(msj)}`;
     }
-
-    function rechazarPedido() { document.getElementById('res-box').style.display = 'none'; }
 </script>
 
 </body>
