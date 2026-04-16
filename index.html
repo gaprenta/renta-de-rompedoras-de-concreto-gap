@@ -25,7 +25,7 @@
         #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 4px solid #25D366; display: none; border-radius: 10px; }
         .btn-confirmar { display: block; background: #25D366; color: white; padding: 15px; text-decoration: none; text-align: center; border-radius: 5px; font-weight: bold; margin-top: 15px; }
 
-        /* CATÁLOGO COMPLETO */
+        /* CATÁLOGO */
         .seccion-equipos { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { border: 4px solid #002752; display: flex; flex-direction: column; text-align: center; }
@@ -41,7 +41,7 @@
 
 <section class="hero">
     <h2>Cotización Transparente</h2>
-    <p>Flete: $15 por km desde Valle Sur, Juárez.</p>
+    <p>Tarifa de Flete: $15 por km desde Valle Sur, Juárez.</p>
 </section>
 
 <div class="cotizador-container" id="form-pedidos">
@@ -53,45 +53,88 @@
         <label>Teléfono:</label>
         <input type="tel" id="tel" placeholder="8119988053">
     </div>
+    
     <div class="form-group">
-        <label>Municipio:</label>
-        <select id="municipio">
-            <option value="Juárez">Juárez</option>
-            <option value="Guadalupe">Guadalupe</option>
-            <option value="Apodaca">Apodaca</option>
-            <option value="San Nicolás">San Nicolás</option>
-            <option value="Monterrey">Monterrey</option>
-            <option value="Cadereyta">Cadereyta</option>
+        <label>Zona de Entrega (30 Zonas Disponibles):</label>
+        <select id="zona" onchange="actualizarFletePorZona()">
+            <option value="0" disabled selected>Selecciona tu zona...</option>
+            <optgroup label="Juárez">
+                <option value="5">Valle Sur / Real de Juárez (5km)</option>
+                <option value="8">Santa Mónica / Acueducto (8km)</option>
+                <option value="12">Anzures / Terranova (12km)</option>
+                <option value="10">Juárez Centro (10km)</option>
+                <option value="15">Arcadia / San Roque (15km)</option>
+            </optgroup>
+            <optgroup label="Guadalupe">
+                <option value="18">Eloy Cavazos (Paseo de Gpe) (18km)</option>
+                <option value="22">Lindavista (22km)</option>
+                <option value="25">San Sebastián / Santa Cruz (25km)</option>
+                <option value="20">La Pastora / Estadio BBVA (20km)</option>
+                <option value="28">Contry la Silla (28km)</option>
+            </optgroup>
+            <optgroup label="Monterrey">
+                <option value="32">Tecnológico / Roma (32km)</option>
+                <option value="35">Centro de Monterrey (35km)</option>
+                <option value="40">San Jerónimo (40km)</option>
+                <option value="45">Cumbres 1er-3er Sector (45km)</option>
+                <option value="55">Cumbres García / Dominio (55km)</option>
+                <option value="38">San Bernabé / Solidaridad (38km)</option>
+            </optgroup>
+            <optgroup label="Cadereyta">
+                <option value="15">Cadereyta Centro (15km)</option>
+                <option value="18">Refinería (18km)</option>
+                <option value="20">Bella Vista (20km)</option>
+            </optgroup>
+            <optgroup label="Apodaca">
+                <option value="25">Huinalá (25km)</option>
+                <option value="30">Apodaca Centro (30km)</option>
+                <option value="35">Pueblo Nuevo (35km)</option>
+                <option value="32">Santa Rosa (32km)</option>
+                <option value="40">Aeropuerto (40km)</option>
+            </optgroup>
+            <optgroup label="San Nicolás / Escobedo">
+                <option value="30">Anáhuac (30km)</option>
+                <option value="35">Las Puentes (35km)</option>
+                <option value="42">Escobedo Centro (42km)</option>
+                <option value="48">Sendero / Plaza Bella (48km)</option>
+            </optgroup>
+            <optgroup label="Otras Áreas">
+                <option value="35">Santiago (Cercado) (35km)</option>
+                <option value="60">García Centro (60km)</option>
+            </optgroup>
         </select>
     </div>
+
     <div class="form-group">
-        <label>Dirección y Colonia:</label>
-        <input type="text" id="direccion" placeholder="Calle, número y colonia" onchange="calcularKM()">
+        <label>Calle y Número (Referencia):</label>
+        <input type="text" id="direccion" placeholder="Ej. Calle Roble #123" onchange="calcularKM_Google()">
     </div>
+
     <div class="form-group">
         <label>Equipo que necesita:</label>
         <select id="equipo">
-            <option value="300">Rompedora 8kg</option>
-            <option value="300">Rompedora 12kg</option>
-            <option value="350">Rompedora 15kg</option>
-            <option value="400">Rompedora 25kg</option>
-            <option value="450">Rompedora 27kg</option>
-            <option value="300">Vibrador Eléctrico CAT</option>
-            <option value="300">Vibrador V1 (Portátil)</option>
-            <option value="200">Vibrador V2</option>
-            <option value="200">Vibrador V3</option>
+            <option value="300">Rompedora 8kg - $300</option>
+            <option value="300">Rompedora 12kg - $300</option>
+            <option value="350">Rompedora 15kg - $350</option>
+            <option value="400">Rompedora 25kg - $400</option>
+            <option value="450">Rompedora 27kg - $450</option>
+            <option value="300">Vibrador Eléctrico CAT - $300</option>
+            <option value="300">Vibrador V1 (Portátil) - $300</option>
+            <option value="200">Vibrador V2 - $200</option>
+            <option value="200">Vibrador V3 - $200</option>
         </select>
     </div>
+
     <div class="form-group">
         <label>Días de renta:</label>
         <input type="number" id="dias" value="1" min="1">
     </div>
 
     <div id="info-km" class="info-flete" style="display:none;">
-        Distancia: <span id="km-txt">0</span> km | Flete: $<span id="fl-txt">0</span>
+        Distancia Estimada: <span id="km-txt">0</span> km | Flete: $<span id="fl-txt">0</span>
     </div>
 
-    <button class="btn-calcular" onclick="mostrarResumen()">Calcular y Pedir</button>
+    <button class="btn-calcular" onclick="mostrarResumen()">Calcular y Pedir por WhatsApp</button>
 
     <div id="res-box">
         <h3 style="margin:0;">Confirmar Pedido</h3>
@@ -103,62 +146,17 @@
 </div>
 
 <section class="seccion-equipos">
-    <h2 style="text-align:center; text-transform:uppercase;">Catálogo de Equipos</h2>
+    <h2 style="text-align:center; text-transform:uppercase;">Nuestro Catálogo</h2>
     <div class="grid">
-        <div class="card">
-            <h4>Rompedora 8kg</h4>
-            <img src="8.jpg">
-            <p>Especial para ranuras de tubería y muros.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Rompedora 12kg</h4>
-            <img src="12.jpg">
-            <p>Ideal para retiro de azulejo y demolición ligera.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Rompedora 15kg</h4>
-            <img src="15.jpg">
-            <p>Potencia para muros de concreto y vigas.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Rompedora 25kg</h4>
-            <img src="25.jpg">
-            <p>Demolición de pisos de concreto y banquetas.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Rompedora 27kg</h4>
-            <img src="27.jpg">
-            <p>Uso rudo: Asfalto y losas industriales gruesas.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Vibrador Eléctrico CAT</h4>
-            <img src="Vibrador.jpg">
-            <p>Compactación profunda de concreto en losas.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Vibrador V1</h4>
-            <img src="vibrador1.jpg">
-            <p>Diseño portátil para castillos y columnas.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Vibrador V2</h4>
-            <img src="vibrador2.jpg">
-            <p>Motor reforzado para uso continuo en obra.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
-        <div class="card">
-            <h4>Vibrador V3</h4>
-            <img src="vibrador3.jpg">
-            <p>Cabezal de alta frecuencia para acabados finos.</p>
-            <a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a>
-        </div>
+        <div class="card"><h4>Rompedora 8kg</h4><img src="8.jpg"><p>Especial para ranuras y muros.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 12kg</h4><img src="12.jpg"><p>Retiro de azulejo y demolición ligera.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 15kg</h4><img src="15.jpg"><p>Muros de concreto y vigas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 25kg</h4><img src="25.jpg"><p>Pisos de concreto y banquetas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Rompedora 27kg</h4><img src="27.jpg"><p>Asfalto y losas industriales.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador CAT</h4><img src="Vibrador.jpg"><p>Compactación en losas.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V1</h4><img src="vibrador1.jpg"><p>Portátil para castillos.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V2</h4><img src="vibrador2.jpg"><p>Uso continuo en obra.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
+        <div class="card"><h4>Vibrador V3</h4><img src="vibrador3.jpg"><p>Acabados finos.</p><a href="#form-pedidos" class="btn-ir-cotizar">Cotizar</a></div>
     </div>
 </section>
 
@@ -167,10 +165,23 @@
     let distFinal = 0;
     let fleteFinal = 0;
 
-    function calcularKM() {
-        const destino = document.getElementById('direccion').value + ", " + document.getElementById('municipio').value + ", NL";
-        const service = new google.maps.DistanceMatrixService();
+    function actualizarFletePorZona() {
+        const zonaSelect = document.getElementById('zona');
+        distFinal = parseInt(zonaSelect.value);
+        fleteFinal = distFinal * 15;
         
+        document.getElementById('km-txt').innerText = distFinal;
+        document.getElementById('fl-txt').innerText = fleteFinal;
+        document.getElementById('info-km').style.display = 'block';
+    }
+
+    // Opcional: Si el usuario pone dirección exacta y tienes API Key, se recalcula con precisión
+    function calcularKM_Google() {
+        const zonaTexto = document.getElementById('zona').options[document.getElementById('zona').selectedIndex].text;
+        const calle = document.getElementById('direccion').value;
+        const destino = calle + ", " + zonaTexto + ", NL, México";
+        
+        const service = new google.maps.DistanceMatrixService();
         service.getDistanceMatrix({
             origins: [baseGAP],
             destinations: [destino],
@@ -183,45 +194,48 @@
                 
                 document.getElementById('km-txt').innerText = distFinal;
                 document.getElementById('fl-txt').innerText = fleteFinal;
-                document.getElementById('info-km').style.display = 'block';
-            } else {
-                // Si falla Google por falta de API Key, ponemos valores por defecto para que no salga $0
-                distFinal = 1; 
-                fleteFinal = 0;
             }
         });
     }
 
     function mostrarResumen() {
         const nom = document.getElementById('nombre').value;
+        const tel = document.getElementById('tel').value;
         const dir = document.getElementById('direccion').value;
-        const mun = document.getElementById('municipio').value;
+        const zonaSel = document.getElementById('zona');
+        const zonaNom = zonaSel.options[zonaSel.selectedIndex].text;
         const d = document.getElementById('dias').value;
         const eSelect = document.getElementById('equipo');
         const eNom = eSelect.options[eSelect.selectedIndex].text;
-        const renta = parseFloat(eSelect.value) * d;
+        
+        if(!nom || zonaSel.value == "0") {
+            alert("Por favor ingresa tu nombre y selecciona una zona.");
+            return;
+        }
 
-        // Si el flete sigue en 0 porque no cargó Google, el total solo será la renta
-        // Pero el mensaje de WA incluirá la dirección para que tú ajustes.
+        const renta = parseFloat(eSelect.value) * d;
         const total = renta + fleteFinal;
 
         document.getElementById('res-detalles').innerHTML = `
-            ${nom}<br>${eNom} x ${d} día(s)<br>
-            Flete a ${mun}: $${fleteFinal} (${distFinal} km)
+            <b>Cliente:</b> ${nom}<br>
+            <b>Zona:</b> ${zonaNom}<br>
+            <b>Equipo:</b> ${eNom} x ${d} día(s)<br>
+            <b>Flete:</b> $${fleteFinal} (${distFinal} km)
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        const link = `https://wa.me/528119988053?text=` + encodeURIComponent(
-            `*SOLICITUD DE RENTA G-A-P*\n` +
-            `Cliente: ${nom}\n` +
-            `Dirección: ${dir}, ${mun}\n` +
-            `Equipo: ${eNom}\n` +
-            `Días: ${d}\n` +
-            `Flete est.: $${fleteFinal} (${distFinal} km)\n` +
-            `*TOTAL EST.: $${total}*`
-        );
-        document.getElementById('wa-link').href = link;
+        const mensajeWA = `*SOLICITUD DE RENTA G-A-P*\n\n` +
+            `*Cliente:* ${nom}\n` +
+            `*Tel:* ${tel}\n` +
+            `*Zona:* ${zonaNom}\n` +
+            `*Dirección:* ${dir}\n` +
+            `*Equipo:* ${eNom}\n` +
+            `*Días:* ${d}\n` +
+            `*Flete:* $${fleteFinal} (${distFinal} km)\n` +
+            `*TOTAL A PAGAR: $${total}*`;
+
+        document.getElementById('wa-link').href = `https://wa.me/528119988053?text=` + encodeURIComponent(mensajeWA);
     }
 </script>
 
