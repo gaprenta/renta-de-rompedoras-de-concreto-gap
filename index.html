@@ -29,30 +29,6 @@
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        /* CALCULADORA CON ZONAS ESPECÍFICAS */
-        .cotizador-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: #f4f4f4;
-            border: 5px solid #FFCD00;
-            padding: 25px;
-            border-radius: 15px;
-            font-family: 'Arial', sans-serif;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .cotizador-container h3 { text-align: center; color: #002752; text-transform: uppercase; margin-top: 0; font-family: 'Arial Black'; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
-        .form-group select, .form-group input { width: 100%; padding: 12px; border: 2px solid #002752; border-radius: 5px; font-weight: bold; font-size: 16px; box-sizing: border-box; }
-        
-        .btn-calcular { width: 100%; background: #000; color: #FFCD00; padding: 18px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 5px; font-size: 18px; transition: 0.3s; }
-        .btn-calcular:hover { background: #FFCD00; color: #000; }
-
-        #res-box { margin-top: 20px; padding: 20px; background: #fff; border: 3px solid #002752; display: none; border-radius: 10px; }
-        .btns-decision { display: flex; gap: 10px; margin-top: 20px; }
-        .btn-si { flex: 1; background: #25D366; color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center; border-radius: 5px; text-transform: uppercase; }
-        .btn-no { flex: 1; background: #d9534f; color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; text-transform: uppercase; }
-
         /* CATÁLOGO */
         .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
         .titulo-seccion { text-align: center; margin-bottom: 20px; text-transform: uppercase; font-size: 32px; border-left: 10px solid #FFCD00; border-right: 10px solid #002752; padding: 0 15px; display: inline-block; color: #002752; }
@@ -89,81 +65,11 @@
         <p>Tu aliado estratégico en Juárez, Guadalupe, Apodaca, San Nicolás y Monterrey.</p>
     </section>
 
-    <section id="cotizador" class="cotizador-container">
-        <h3>Calculadora de Cotización</h3>
-        
-        <div class="form-group">
-            <label>Equipo que necesita:</label>
-            <select id="cot-equipo">
-                <option value="300">Rompedora 8kg ($300)</option>
-                <option value="300">Rompedora 12kg ($300)</option>
-                <option value="350">Rompedora 15kg ($350)</option>
-                <option value="400">Rompedora 25kg ($400)</option>
-                <option value="450">Rompedora 27kg ($450)</option>
-                <option value="300">Vibrador CAT ($300)</option>
-                <option value="300">Vibrador V1 ($300)</option>
-                <option value="200">Vibrador V2 ($200)</option>
-                <option value="200">Vibrador V3 ($200)</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Días de renta:</label>
-            <input type="number" id="cot-dias" value="1" min="1">
-        </div>
-
-        <div class="form-group">
-            <label>Ubicación (Zona de entrega):</label>
-            <select id="cot-zona-flete">
-                <optgroup label="Juárez">
-                    <option value="100">Juárez Centro y alrededores ($100)</option>
-                    <option value="150">Juárez Zona Teofilo Salinas / San Mateo ($150)</option>
-                </optgroup>
-                <optgroup label="Guadalupe">
-                    <option value="250">Guadalupe Contry y alrededores ($250)</option>
-                    <option value="250">Guadalupe Zona Expo y alrededores ($250)</option>
-                    <option value="200">Guadalupe Zona Santa Cruz y alrededores ($200)</option>
-                    <option value="200">Guadalupe Zona Dos Ríos ($200)</option>
-                </optgroup>
-                <optgroup label="Monterrey">
-                    <option value="400">Monterrey Centro / Barrio Antiguo ($400)</option>
-                    <option value="500">Monterrey Zona Cumbres ($500)</option>
-                    <option value="450">Monterrey Zona Sur / Carretera Nal. ($450)</option>
-                </optgroup>
-                <optgroup label="Otros Municipios">
-                    <option value="300">Apodaca Centro y alrededores ($300)</option>
-                    <option value="300">San Nicolás (La Fe / Sendero) ($300)</option>
-                    <option value="250">Cadereyta Centro ($250)</option>
-                </optgroup>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Colonia / Referencia exacta:</label>
-            <input type="text" id="cot-colonia" placeholder="Ej: Col. Las Lomas, Calle Juárez #123">
-        </div>
-
-        <button class="btn-calcular" onclick="realizarCalculo()">Calcular Costo Total</button>
-
-        <div id="res-box">
-            <p>Equipo: <strong id="res-nom-equipo"></strong></p>
-            <p>Renta por días: <strong>$<span id="res-renta"></span></strong></p>
-            <p>Flete a Zona: <strong>$<span id="res-flete"></span></strong></p>
-            <hr>
-            <h4 style="margin: 0; color: #002752; font-size: 22px;">Total a Pagar: $<span id="res-total"></span></h4>
-            
-            <div class="btns-decision">
-                <a href="#" id="btn-whatsapp-cot" target="_blank" class="btn-si">ACEPTAR</a>
-                <button class="btn-no" onclick="cerrarRes()">RECHAZAR</button>
-            </div>
-        </div>
-    </section>
-
     <main class="seccion-equipos">
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         
         <div class="nota-flete">
-            <strong>ENTREGA A DOMICILIO:</strong> Selecciona tu zona en la calculadora para conocer el costo de flete.
+            <strong>ENTREGA A DOMICILIO:</strong> Contáctanos vía WhatsApp para consultar disponibilidad y flete a tu zona.
         </div>
 
         <div class="grid">
@@ -177,7 +83,7 @@
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
                         <li><span class="icon-usage">GAP</span> Ranuras en pared</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('300')">Cotizar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
 
@@ -191,7 +97,7 @@
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
                         <li><span class="icon-usage">GAP</span> Demolición media</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('300')">Cotizar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
 
@@ -205,7 +111,7 @@
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
                         <li><span class="icon-usage">GAP</span> Contra cimientos</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('350')">Cotizar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
 
@@ -219,7 +125,7 @@
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
                         <li><span class="icon-usage">GAP</span> Losas de concreto</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('400')">Cotizar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
 
@@ -233,7 +139,7 @@
                         <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
                         <li><span class="icon-usage">GAP</span> Zapatas y drenaje</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('450')">Cotizar Equipo</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Equipo</a>
                 </div>
             </div>
         </div>
@@ -250,7 +156,7 @@
                         <li><span class="icon-usage-v">GAP</span> Compactación de losas</li>
                         <li><span class="icon-usage-v">GAP</span> Acabado profesional</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('300')">Cotizar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -264,7 +170,7 @@
                         <li><span class="icon-usage-v">GAP</span> Ideal para castillos</li>
                         <li><span class="icon-usage-v">GAP</span> Fácil manejo</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('300')">Cotizar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -277,7 +183,7 @@
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Motores de alto rendimiento</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('200')">Cotizar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
 
@@ -290,7 +196,7 @@
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Máxima eliminación de aire</li>
                     </ul>
-                    <a href="#cotizador" class="btn-rentar" onclick="seleccionarEquipo('200')">Cotizar Ahora</a>
+                    <a href="https://wa.me/528119988053" class="btn-rentar">Rentar Ahora</a>
                 </div>
             </div>
         </div>
@@ -313,45 +219,5 @@
         811-998-80-53
     </a>
 
-    <script>
-        function realizarCalculo() {
-            const precioBase = parseFloat(document.getElementById('cot-equipo').value);
-            const dias = parseInt(document.getElementById('cot-dias').value);
-            const flete = parseFloat(document.getElementById('cot-zona-flete').value);
-            
-            const equipoTexto = document.getElementById('cot-equipo').options[document.getElementById('cot-equipo').selectedIndex].text;
-            const zonaTexto = document.getElementById('cot-zona-flete').options[document.getElementById('cot-zona-flete').selectedIndex].text;
-            const colonia = document.getElementById('cot-colonia').value || "No especificada";
-
-            const totalRenta = precioBase * dias;
-            const granTotal = totalRenta + flete;
-
-            document.getElementById('res-nom-equipo').innerText = equipoTexto;
-            document.getElementById('res-renta').innerText = totalRenta;
-            document.getElementById('res-flete').innerText = flete;
-            document.getElementById('res-total').innerText = granTotal;
-            document.getElementById('res-box').style.display = 'block';
-
-            const mensaje = encodeURIComponent(
-                `Hola GAP, me interesa rentar:\n` +
-                `- Equipo: ${equipoTexto}\n` +
-                `- Días: ${dias}\n` +
-                `- Zona Seleccionada: ${zonaTexto}\n` +
-                `- Referencia: ${colonia}\n` +
-                `- Total a pagar: $${granTotal}`
-            );
-            document.getElementById('btn-whatsapp-cot').href = `https://wa.me/528119988053?text=${mensaje}`;
-            
-            document.getElementById('res-box').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function cerrarRes() {
-            document.getElementById('res-box').style.display = 'none';
-        }
-
-        function seleccionarEquipo(valor) {
-            document.getElementById('cot-equipo').value = valor;
-        }
-    </script>
 </body>
 </html>
