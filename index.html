@@ -57,7 +57,6 @@
         .modelo-txt { font-weight: 900; font-size: 1.3em; text-transform: uppercase; }
         .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
         
-        /* PRECIO Y LEYENDA DE FLETE */
         .card-price-tag { background: #002752; color: #fff; padding: 10px 10px 5px 10px; text-align: center; font-size: 1.4em; font-weight: 900; }
         .flete-info { background: #002752; color: #FFCD00; text-align: center; font-size: 0.65em; padding-bottom: 10px; font-family: 'Arial', sans-serif; text-transform: uppercase; }
         
@@ -73,10 +72,10 @@
 
         /* MODAL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-        .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; }
-        .modal-content input { width: 100%; padding: 12px; margin: 8px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
-        .modal-content h3 { color: #002752; margin-bottom: 15px; }
-        .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+        .modal-content { background: white; margin: 5% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; overflow-y: auto; max-height: 90vh; }
+        .modal-content input { width: 100%; padding: 12px; margin: 5px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
+        .modal-content h3 { color: #002752; margin-bottom: 10px; }
+        .modal-btns { display: flex; gap: 10px; margin-top: 15px; }
         .btn-send { background: #25D366; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
         .btn-close { background: #d9534f; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
 
@@ -308,9 +307,11 @@
         <div class="modal-content">
             <h3>Solicitud de Cotización</h3>
             <p id="equipoTxt" style="font-weight: bold; color: #002752;"></p>
-            <input type="text" id="nombre" placeholder="Tu Nombre">
-            <input type="text" id="colonia" placeholder="Tu Colonia">
-            <input type="text" id="municipio" placeholder="Tu Municipio">
+            <input type="text" id="nombre" placeholder="Nombre completo">
+            <input type="text" id="direccion" placeholder="Dirección exacta (Calle y Número)">
+            <input type="text" id="colonia" placeholder="Colonia">
+            <input type="text" id="municipio" placeholder="Municipio">
+            <input type="tel" id="telefono" placeholder="Teléfono">
             <div class="modal-btns">
                 <button class="btn-close" onclick="cerrarModal()">RECHAZAR</button>
                 <button class="btn-send" onclick="enviarWhatsapp()">CONTINUAR</button>
@@ -349,17 +350,20 @@
             document.getElementById('modalCotizacion').style.display = 'none';
         }
 
+        // FUNCIÓN ACTUALIZADA PARA ENVIAR TODOS LOS DATOS
         function enviarWhatsapp() {
             const nom = document.getElementById('nombre').value;
+            const dir = document.getElementById('direccion').value;
             const col = document.getElementById('colonia').value;
             const mun = document.getElementById('municipio').value;
+            const tel = document.getElementById('telefono').value;
 
-            if(nom == "" || col == "" || mun == "") {
-                alert("Por favor completa tus datos para la cotización");
+            if(nom == "" || dir == "" || col == "" || mun == "" || tel == "") {
+                alert("Por favor completa todos los datos para la cotización");
                 return;
             }
 
-            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}`;
+            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Dirección:* ${dir}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}%0A*Teléfono:* ${tel}`;
             window.open(`https://wa.me/528119988053?text=${mensaje}`, '_blank');
             cerrarModal();
         }
