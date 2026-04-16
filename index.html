@@ -32,6 +32,14 @@
         .sobre-gap { padding: 40px 20px; max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Arial', sans-serif; color: #333; }
         .sobre-gap h3 { color: #002752; font-size: 24px; text-transform: uppercase; }
 
+        /* SECCIÓN DE REQUISITOS */
+        .politicas-renta { background: #f9f9f9; padding: 30px 20px; border-top: 4px solid #FFCD00; border-bottom: 4px solid #FFCD00; }
+        .politicas-container { max-width: 900px; margin: 0 auto; font-family: 'Arial', sans-serif; color: #000; }
+        .politicas-container h3 { color: #002752; text-transform: uppercase; text-align: center; margin-bottom: 20px; }
+        .politicas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .politica-item { background: #fff; padding: 15px; border-left: 5px solid #002752; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .politica-item strong { color: #002752; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9em; }
+
         /* CATÁLOGO */
         .seccion-equipos { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
         .titulo-seccion { text-align: center; margin-bottom: 20px; text-transform: uppercase; font-size: 32px; border-left: 10px solid #FFCD00; border-right: 10px solid #002752; padding: 0 15px; display: inline-block; color: #002752; }
@@ -47,13 +55,13 @@
         .card-specs-bar { background: #FFCD00; color: #002752; padding: 12px; text-align: center; font-weight: 900; }
         .precio-container { background: #000; color: #FFCD00; padding: 10px; text-align: center; }
         .precio-tag { display: block; font-size: 1.4em; }
+        .flete-tag { display: block; font-size: 0.8em; font-family: 'Arial', sans-serif; font-weight: bold; color: #fff; margin-top: 2px; }
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
         .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 5px; }
         .btn-rentar { display: block; background: #002752; color: #FFCD00; text-align: center; padding: 18px; text-decoration: none; font-weight: 900; text-transform: uppercase; }
 
-        /* AJUSTE FOOTER PARA BOTÓN FLOTANTE */
         .footer-info { background: #000; color: #fff; padding: 60px 20px 100px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
         
         .ws-flotante { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 900; z-index: 9999; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
@@ -72,14 +80,34 @@
 
     <section class="sobre-gap">
         <h3>¿Quiénes somos?</h3>
-        <p>En <strong>G-A-P</strong> nos dedicamos a facilitar tus proyectos de construcción y remodelación. Somos una empresa comprometida con la <strong>puntualidad y la potencia</strong>, ofreciendo equipos de demolición y vibrado en óptimas condiciones mecánicas. Entendemos que el tiempo es dinero en la obra, por eso garantizamos entregas rápidas en toda el área metropolitana.</p>
+        <p>En <strong>G-A-P</strong> nos dedicamos a facilitar tus proyectos de construcción y remodelación. Somos una empresa comprometida con la <strong>puntualidad y la potencia</strong>, ofreciendo equipos de demolición y vibrado en óptimas condiciones mecánicas.</p>
+    </section>
+
+    <section class="politicas-renta">
+        <div class="politicas-container">
+            <h3>Condiciones de Servicio</h3>
+            <div class="politicas-grid">
+                <div class="politica-item">
+                    <strong>Requisito Obligatorio</strong>
+                    Presentar INE original del titular de la casa o responsable del equipo al momento de la entrega.
+                </div>
+                <div class="politica-item">
+                    <strong>Entrega del Equipo</strong>
+                    Cualquier persona en el domicilio puede entregar el equipo al recolector en caso de que el titular no se encuentre.
+                </div>
+                <div class="politica-item">
+                    <strong>Extensión de Renta</strong>
+                    Si requiere días adicionales, favor de avisar al menos <strong>2 horas antes</strong> del vencimiento de su renta actual.
+                </div>
+            </div>
+        </div>
     </section>
 
     <main class="seccion-equipos">
         <div style="text-align: center;"><h2 class="titulo-seccion">Catálogo de Rompedoras</h2></div>
         
         <div class="nota-flete">
-            <strong>ENTREGA A DOMICILIO:</strong> Contáctanos vía WhatsApp para cotizar el flete exacto a tu ubicación.
+            <strong>AVISO IMPORTANTE:</strong> Al rentar, el titular de la casa o responsable acepta que el equipo sea entregado por cualquier persona presente en el domicilio al terminar el plazo.
         </div>
 
         <div class="grid">
@@ -87,7 +115,10 @@
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG</span></div>
                 <img src="8.jpg" alt="Rompedora 8kg" class="card-img">
                 <div class="card-specs-bar">720 Watts | 6 Joules</div>
-                <div class="precio-container"><span class="precio-tag">$300 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$300 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Orificios con broca</li>
@@ -101,7 +132,10 @@
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 12 KG</span></div>
                 <img src="12.jpg" alt="Rompedora 12kg" class="card-img">
                 <div class="card-specs-bar">960 Watts | 12 Joules</div>
-                <div class="precio-container"><span class="precio-tag">$300 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$300 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Quitar vitropiso</li>
@@ -115,7 +149,10 @@
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15 KG</span></div>
                 <img src="15.jpg" alt="Rompedora 15kg" class="card-img">
                 <div class="card-specs-bar">1200 Watts | 25 Joules</div>
-                <div class="precio-container"><span class="precio-tag">$350 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$350 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Muros y vigas</li>
@@ -129,7 +166,10 @@
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG</span></div>
                 <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
                 <div class="card-specs-bar">1800 Watts | 60 Joules</div>
-                <div class="precio-container"><span class="precio-tag">$400 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$400 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
@@ -143,7 +183,10 @@
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
                 <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
                 <div class="card-specs-bar">2100 Watts | 70 Joules</div>
-                <div class="precio-container"><span class="precio-tag">$450 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$450 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> Asfalto y piedras</li>
@@ -160,7 +203,10 @@
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Eléctrico CAT</span></div>
                 <img src="Vibrador.jpg" alt="Vibrador Amarillo" class="card-img">
                 <div class="card-specs-bar">1.5 HP | Alta Frecuencia</div>
-                <div class="precio-container"><span class="precio-tag">$300 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$300 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Compactación de losas</li>
@@ -174,7 +220,10 @@
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Portátil V1</span></div>
                 <img src="vibrador1.jpg" alt="Vibrador 1" class="card-img">
                 <div class="card-specs-bar">Chicote Reforzado</div>
-                <div class="precio-container"><span class="precio-tag">$300 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$300 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Ideal para castillos</li>
@@ -188,7 +237,10 @@
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Industrial V2</span></div>
                 <img src="vibrador2.jpg" alt="Vibrador 2" class="card-img">
                 <div class="card-specs-bar">Uso Heavy Duty</div>
-                <div class="precio-container"><span class="precio-tag">$200 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$200 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Motores de alto rendimiento</li>
@@ -201,7 +253,10 @@
                 <div class="card-header-vibrador"><span class="modelo-txt">Vibrador de Precisión V3</span></div>
                 <img src="vibrador3.jpg" alt="Vibrador 3" class="card-img">
                 <div class="card-specs-bar">Cabezal de Acero</div>
-                <div class="precio-container"><span class="precio-tag">$200 / 24 hrs</span></div>
+                <div class="precio-container">
+                    <span class="precio-tag">$200 / 24 hrs</span>
+                    <span class="flete-tag">+ Flete según zona</span>
+                </div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> Máxima eliminación de aire</li>
