@@ -59,24 +59,18 @@
         <label>Municipio / Zona de Obra:</label>
         <select id="zona">
             <option value="0" disabled selected>-- Seleccione su Ubicación --</option>
-            <optgroup label="ZONA 1 (Proximidad Directa)">
-                <option value="200">Juárez (Todas las colonias)</option>
-                <option value="200">Guadalupe (Dos Ríos, Paseo Gpe, Eloy Cavazos)</option>
-            </optgroup>
-            <optgroup label="ZONA 2 (Intermedia)">
-                <option value="300">Apodaca (Huinalá, Pueblo Nuevo, Centro)</option>
-                <option value="300">Guadalupe (Lindavista, La Pastora, Contry)</option>
-                <option value="300">San Nicolás (La Fe, Anillo Periférico)</option>
-            </optgroup>
-            <optgroup label="ZONA 3 (Extendida)">
-                <option value="400">Monterrey (Centro, Zona Tec)</option>
-                <option value="400">San Nicolás (Universidad, Las Puentes, Sendero)</option>
-                <option value="400">Pesquería</option>
-            </optgroup>
-            <optgroup label="ZONA 4 (Especial)">
-                <option value="500">Monterrey (Cumbres, San Jerónimo, San Pedro)</option>
-                <option value="500">Escobedo / García (Sectores lejanos)</option>
-            </optgroup>
+            <option value="200">Juárez (Todas las colonias)</option>
+            <option value="200">Guadalupe (Dos Ríos, Paseo Gpe, Eloy Cavazos)</option>
+            <option value="300">Guadalupe (Lindavista, La Pastora, Contry)</option>
+            <option value="300">Apodaca (Huinalá, Pueblo Nuevo, Centro)</option>
+            <option value="300">San Nicolás (La Fe, Anillo Periférico)</option>
+            <option value="400">San Nicolás (Universidad, Las Puentes, Sendero)</option>
+            <option value="400">Monterrey (Centro, Zona Tec)</option>
+            <option value="400">Pesquería</option>
+            <option value="500">Monterrey (Cumbres, San Jerónimo, San Pedro)</option>
+            <option value="500">Escobedo / García (Sectores lejanos)</option>
+            <option value="500">Santa Catarina</option>
+            <option value="500">Santiago, N.L.</option>
         </select>
     </div>
 
@@ -88,15 +82,15 @@
     <div class="form-group">
         <label>Equipo que necesita:</label>
         <select id="equipo">
-            <option value="300">Rompedora 8kg - $300</option>
-            <option value="300">Rompedora 12kg - $300</option>
-            <option value="350">Rompedora 15kg - $350</option>
-            <option value="400">Rompedora 25kg - $400</option>
-            <option value="450">Rompedora 27kg - $450</option>
-            <option value="300">Vibrador Eléctrico CAT - $300</option>
-            <option value="300">Vibrador V1 (Portátil) - $300</option>
-            <option value="200">Vibrador V2 - $200</option>
-            <option value="200">Vibrador V3 - $200</option>
+            <option value="300">Rompedora 8kg</option>
+            <option value="300">Rompedora 12kg</option>
+            <option value="350">Rompedora 15kg</option>
+            <option value="400">Rompedora 25kg</option>
+            <option value="450">Rompedora 27kg</option>
+            <option value="300">Vibrador Eléctrico CAT</option>
+            <option value="300">Vibrador V1 (Portátil)</option>
+            <option value="200">Vibrador V2</option>
+            <option value="200">Vibrador V3</option>
         </select>
     </div>
 
@@ -111,7 +105,7 @@
         <h3 style="margin:0; text-transform:uppercase; color:#002752;">Confirmación de Pedido</h3>
         <p id="res-detalles" style="line-height:1.6;"></p>
         <hr>
-        <h2 style="margin:0; color:#002752;">COSTO TOTAL: $<span id="res-total"></span></h2>
+        <h2 style="margin:0; color:#002752;">TOTAL A PAGAR: $<span id="res-total"></span></h2>
         
         <div class="botones-confirmar">
             <a href="#" id="wa-link" class="btn-confirmar" target="_blank">ACEPTAR Y ENVIAR</a>
@@ -172,21 +166,21 @@
         const rentaTotal = costoRentaIndividual * d;
         const total = rentaTotal + flete;
 
-        // EL CLIENTE SOLO VE EL TOTAL DE RENTA (INCLUYENDO FLETE)
+        // EL CLIENTE SOLO VE DATOS GENERALES Y EL TOTAL NETO
         document.getElementById('res-detalles').innerHTML = `
             <b>Cliente:</b> ${nom}<br>
             <b>Ubicación:</b> ${zonaNom}<br>
             <b>Equipo Solicitado:</b> ${eNom}<br>
             <b>Tiempo de Renta:</b> ${d} día(s)<br>
-            <b>Servicio de Entrega:</b> Incluido en el total
+            <b>Logística:</b> Servicio de entrega a domicilio incluido.
         `;
         document.getElementById('res-total').innerText = total;
         document.getElementById('res-box').style.display = 'block';
 
-        // PARA TU WHATSAPP EL DESGLOSE SÍ LLEGA COMPLETO PARA TU CONTROL
+        // PARA TU CONTROL POR WHATSAPP, EL MENSAJE SÍ TRAE EL DESGLOSE
         const mensajeWA = `*NUEVO PEDIDO G-A-P*\n\n` +
             `*Cliente:* ${nom}\n` +
-            `*Zona:* ${zonaNom}\n` +
+            `*Ubicación:* ${zonaNom}\n` +
             `*Dirección:* ${dir}\n` +
             `*Equipo:* ${eNom}\n` +
             `*Días:* ${d}\n` +
