@@ -49,7 +49,6 @@
         .card { border: 4px solid #002752; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: #FFCD00; transform: translateY(-8px); }
         
-        /* Ajuste para que las fotos no se salgan de las líneas */
         .card-img { 
             width: 100%; 
             height: 280px; 
@@ -80,7 +79,6 @@
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
         .btn-cotizar:hover { background: #001a38; }
 
-        /* MODAL */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
         .modal-content { background: white; margin: 5% auto; padding: 25px; width: 90%; max-width: 400px; border: 5px solid #FFCD00; border-radius: 10px; text-align: center; overflow-y: auto; max-height: 90vh; }
         .modal-content input { width: 100%; padding: 12px; margin: 5px 0; border: 2px solid #002752; border-radius: 5px; box-sizing: border-box; font-family: Arial; }
@@ -246,6 +244,38 @@
 
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V1)</span></div>
+                <img src="25.1.jpg" alt="Rompedora 25.1kg" class="card-img">
+                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
+                <div class="flete-info">Flete se calcula según ubicación</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Pavimentos gruesos</li>
+                        <li><span class="icon-usage">GAP</span> Demolición pesada</li>
+                    </ul>
+                    <button onclick="abrirModal('Rompedora de 25kg V1 ($400)')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (V2)</span></div>
+                <img src="25.2.jpg" alt="Rompedora 25.2kg" class="card-img">
+                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
+                <div class="flete-info">Flete se calcula según ubicación</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar">1800 Watts | 60 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
+                        <li><span class="icon-usage">GAP</span> Losas de concreto</li>
+                    </ul>
+                    <button onclick="abrirModal('Rompedora de 25kg V2 ($400)')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 25 KG (Original)</span></div>
                 <img src="25.jpg" alt="Rompedora 25kg" class="card-img">
                 <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
                 <div class="flete-info">Flete se calcula según ubicación</div>
@@ -256,7 +286,7 @@
                         <li><span class="icon-usage">GAP</span> Pisos y banquetas</li>
                         <li><span class="icon-usage">GAP</span> Losas de concreto</li>
                     </ul>
-                    <button onclick="abrirModal('Rompedora de 25kg V1 ($400)')" class="btn-cotizar">Cotizar Renta</button>
+                    <button onclick="abrirModal('Rompedora de 25kg Original ($400)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
 
@@ -275,6 +305,24 @@
                     <button onclick="abrirModal('Rompedora de 27kg ($450)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 30 KG</span> <span class="badge-tipo">MÁXIMA POTENCIA</span></div>
+                <img src="30.png" alt="Rompedora 30kg" class="card-img">
+                <div class="card-price-tag">$500 <small style="font-size: 0.5em;">X DÍA</small></div>
+                <div class="flete-info">Flete se calcula según ubicación</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="card-specs-bar">2200 Watts | 75 Joules</div>
+                <div class="card-body">
+                    <ul class="ideal-list">
+                        <li><span class="icon-usage">GAP</span> Demolición industrial</li>
+                        <li><span class="icon-usage">GAP</span> Concreto armado grueso</li>
+                        <li><span class="icon-usage">GAP</span> Máximo rendimiento</li>
+                    </ul>
+                    <button onclick="abrirModal('Rompedora de 30kg ($500)')" class="btn-cotizar">Cotizar Renta</button>
+                </div>
+            </div>
+
         </div>
 
         <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
