@@ -73,11 +73,13 @@
         .badge-tipo { font-size: 0.7em; background: #FFCD00; color: #000; padding: 2px 8px; border-radius: 5px; display: inline-block; vertical-align: middle; margin-left: 10px; }
 
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
-        .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
         
-        /* SEPARACIÓN PARA EL DISTINTIVO GAP */
-        .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 15px; display: inline-block; }
-        .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 15px; display: inline-block; }
+        /* AJUSTE DE ALINEACIÓN PROFESIONAL */
+        .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
+        .ideal-list li { display: flex; align-items: flex-start; margin-bottom: 12px; line-height: 1.4; text-align: left; }
+        
+        .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 15px; flex-shrink: 0; }
+        .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 15px; flex-shrink: 0; }
         
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
         .btn-cotizar:hover { background: #001a38; }
@@ -152,9 +154,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Función de taladro y rotomartillo.</li>
-                        <li><span class="icon-usage">GAP</span> Ideal para perforaciones con broca.</li>
-                        <li><span class="icon-usage">GAP</span> Ranurado preciso en muros y paredes.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Función de taladro y rotomartillo.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Ideal para perforaciones con broca.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Ranurado preciso en muros y paredes.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 6kg ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -168,9 +170,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Retiro de azulejo y vitropiso.</li>
-                        <li><span class="icon-usage">GAP</span> Demolición de impacto ligero a medio.</li>
-                        <li><span class="icon-usage">GAP</span> Diseño ergonómico de alta eficiencia.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Retiro de azulejo y vitropiso.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición de impacto ligero a medio.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Diseño ergonómico de alta eficiencia.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 8kg V1 ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -184,9 +186,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Especial para remoción de revestimientos.</li>
-                        <li><span class="icon-usage">GAP</span> Demolición controlada, ligera y media.</li>
-                        <li><span class="icon-usage">GAP</span> Equipo optimizado para uso continuo.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Especial para remoción de revestimientos.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición controlada, ligera y media.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Equipo optimizado para uso continuo.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 8kg V2 ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -200,9 +202,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Demolición de muros, vigas y cerramientos.</li>
-                        <li><span class="icon-usage">GAP</span> Potencia ideal para trabajos medianos.</li>
-                        <li><span class="icon-usage">GAP</span> Sistema SDS MAX para máximo agarre.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición de muros, vigas y cerramientos.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Potencia ideal para trabajos medianos.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Sistema SDS MAX para máximo agarre.</span></li>
                     </ul>
                     <button onclick="abrirModal('10 KG SDS MAX V1 ($350)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -216,9 +218,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Remoción de estructuras y concreto firme.</li>
-                        <li><span class="icon-usage">GAP</span> Versatilidad en vigas y trabajos de altura.</li>
-                        <li><span class="icon-usage">GAP</span> Alto rendimiento en obra civil mediana.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Remoción de estructuras y concreto firme.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Versatilidad en vigas y trabajos de altura.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Alto rendimiento en obra civil mediana.</span></li>
                     </ul>
                     <button onclick="abrirModal('10 KG SDS MAX V2 ($350)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -232,9 +234,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Demolición de banquetas, pisos y losas.</li>
-                        <li><span class="icon-usage">GAP</span> Excavaciones para drenajes y zapatas.</li>
-                        <li><span class="icon-usage">GAP</span> Potencia bruta para estructuras pesadas.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición de banquetas, pisos y losas.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Excavaciones para drenajes y zapatas.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Potencia bruta para estructuras pesadas.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 15-20kg V1 ($400)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -248,9 +250,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Ruptura eficiente de losas y escaleras.</li>
-                        <li><span class="icon-usage">GAP</span> Preparación de terreno para cimentaciones.</li>
-                        <li><span class="icon-usage">GAP</span> Equipo de alto impacto para uso rudo.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Ruptura eficiente de losas y escaleras.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Preparación de terreno para cimentaciones.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Equipo de alto impacto para uso rudo.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 15-20kg V2 ($400)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -264,9 +266,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Demolición de pisos firmes y banquetas.</li>
-                        <li><span class="icon-usage">GAP</span> Habilitado de áreas para zapatas y red.</li>
-                        <li><span class="icon-usage">GAP</span> Balance perfecto entre peso y potencia.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición de pisos firmes y banquetas.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Habilitado de áreas para zapatas y red.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Balance perfecto entre peso y potencia.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 15-20kg V3 ($400)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -280,9 +282,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Ruptura de concreto armado en losas.</li>
-                        <li><span class="icon-usage">GAP</span> Perforación profunda para drenajes.</li>
-                        <li><span class="icon-usage">GAP</span> Desempeño superior en demolición pesada.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Ruptura de concreto armado en losas.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Perforación profunda para drenajes.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Desempeño superior en demolición pesada.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 15-20kg V4 ($400)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -296,9 +298,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Rompe asfalto, piedras y roca sólida.</li>
-                        <li><span class="icon-usage">GAP</span> Apertura de zanjas para drenaje pluvial.</li>
-                        <li><span class="icon-usage">GAP</span> Fuerza extrema para proyectos industriales.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Rompe asfalto, piedras y roca sólida.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Apertura de zanjas para drenaje pluvial.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Fuerza extrema para proyectos industriales.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 27kg ($450)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -312,9 +314,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> Demolición industrial de alta gama.</li>
-                        <li><span class="icon-usage">GAP</span> Concreto armado de gran espesor.</li>
-                        <li><span class="icon-usage">GAP</span> El equipo más potente de nuestro catálogo.</li>
+                        <li><span class="icon-usage">GAP</span> <span>Demolición industrial de alta gama.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Concreto armado de gran espesor.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>El equipo más potente de nuestro catálogo.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 30kg ($500)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -332,9 +334,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Compactación uniforme de losas.</li>
-                        <li><span class="icon-usage-v">GAP</span> Acabado profesional libre de burbujas.</li>
-                        <li><span class="icon-usage-v">GAP</span> Motor de alta frecuencia y durabilidad.</li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Compactación uniforme de losas.</span></li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Acabado profesional libre de burbujas.</span></li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Motor de alta frecuencia y durabilidad.</span></li>
                     </ul>
                     <button onclick="abrirModal('Vibrador Eléctrico CAT ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
@@ -348,9 +350,9 @@
                 <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> Diseño ligero ideal para castillos.</li>
-                        <li><span class="icon-usage-v">GAP</span> Manejo ágil en espacios reducidos.</li>
-                        <li><span class="icon-usage-v">GAP</span> Garantiza la integridad de la mezcla.</li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Diseño ligero ideal para castillos.</span></li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Manejo ágil en espacios reducidos.</span></li>
+                        <li><span class="icon-usage-v">GAP</span> <span>Garantiza la integridad de la mezcla.</span></li>
                     </ul>
                     <button onclick="abrirModal('Vibrador Portátil V1 ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
