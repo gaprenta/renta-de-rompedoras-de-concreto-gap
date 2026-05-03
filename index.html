@@ -29,7 +29,6 @@
     </script>
     
     <style>
-        /* ESTILOS ORIGINALES MANTENIDOS */
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         header { background: #FFCD00; width: 100%; overflow: hidden; border-bottom: 8px solid #002752; }
         .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
@@ -74,6 +73,7 @@
         .btn-send { background: #25D366; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
         .btn-close { background: #d9534f; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
         .footer-info { background: #000; color: #fff; padding: 60px 20px 120px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
+        .footer-horarios { list-style: none; padding: 0; margin: 0; line-height: 2; }
         .ws-flotante { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
         .ws-flotante:hover { transform: scale(1.1); }
         .ws-flotante img { width: 35px; height: 35px; }
@@ -146,150 +146,6 @@
             </div>
 
             <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG (V1)</span> <span class="badge-tipo">TRABAJO LIGERO</span></div>
-                <img src="6.png" alt="Rompedora 8kg" class="card-img">
-                <div class="card-price-tag">$300 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Retiro de azulejo y vitropiso.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Demolición de impacto ligero a medio.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Diseño ergonómico de alta eficiencia.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 8kg V1 ($300)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 8 KG (V2)</span> <span class="badge-tipo">TRABAJO LIGERO</span></div>
-                <img src="6.1.png" alt="Rompedora 8kg" class="card-img">
-                <div class="card-price-tag">$300 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Especial para remoción de revestimientos.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Demolición controlada, ligera y media.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Equipo optimizado para uso continuo.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 8kg V2 ($300)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">10 KG SDS MAX (V1)</span> <span class="badge-tipo">TRABAJO LIGERO</span></div>
-                <img src="10.png" alt="Rompedora 10kg SDS MAX" class="card-img">
-                <div class="card-price-tag">$350 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Demolición de muros, vigas y cerramientos.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Potencia ideal para trabajos medianos.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Sistema SDS MAX para máximo agarre.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('10 KG SDS MAX V1 ($350)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">10 KG SDS MAX (V2)</span> <span class="badge-tipo">TRABAJO LIGERO</span></div>
-                <img src="12.png" alt="Rompedora 10kg SDS MAX" class="card-img">
-                <div class="card-price-tag">$350 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Remoción de estructuras y concreto firme.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Versatilidad en vigas y trabajos de altura.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Alto rendimiento en obra civil mediana.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('10 KG SDS MAX V2 ($350)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15-20 KG (V1)</span></div>
-                <img src="20.jpg" alt="Rompedora 15-20kg" class="card-img">
-                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Demolición de banquetas, pisos y losas.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Excavaciones para drenajes y zapatas.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Potencia bruta para estructuras pesadas.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 15-20kg V1 ($400)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15-20 KG (V2)</span></div>
-                <img src="25.1.jpg" alt="Rompedora 15-20kg" class="card-img">
-                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Ruptura eficiente de losas y escaleras.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Preparación de terreno para cimentaciones.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Equipo de alto impacto para uso rudo.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 15-20kg V2 ($400)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15-20 KG (V3)</span></div>
-                <img src="25.2.jpg" alt="Rompedora 15-20kg" class="card-img">
-                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Demolición de pisos firmes y banquetas.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Habilitado de áreas para zapatas y red.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Balance perfecto entre peso y potencia.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 15-20kg V3 ($400)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 15-20 KG (V4)</span></div>
-                <img src="25.jpg" alt="Rompedora 15-20kg" class="card-img">
-                <div class="card-price-tag">$400 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Ruptura de concreto armado en losas.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Perforación profunda para drenajes.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Desempeño superior en demolición pesada.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 15-20kg V4 ($400)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-kg"><span class="modelo-txt">Rompedora de 27 KG</span></div>
-                <img src="27.jpg" alt="Rompedora 27kg" class="card-img">
-                <div class="card-price-tag">$450 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage">GAP</span> <span>Rompe asfalto, piedras y roca sólida.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Apertura de zanjas para drenaje pluvial.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Fuerza extrema para proyectos industriales.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Rompedora de 27kg ($450)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">Rompedora de 30 KG</span> <span class="badge-tipo">MÁXIMA POTENCIA</span></div>
                 <img src="30.png" alt="Rompedora 30kg" class="card-img">
                 <div class="card-price-tag">$500 <small style="font-size: 0.5em;">X DÍA</small></div>
@@ -302,41 +158,6 @@
                         <li><span class="icon-usage">GAP</span> <span>El equipo más potente de nuestro catálogo.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 30kg ($500)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 80px;"><h2 class="titulo-seccion">Vibradores de Concreto</h2></div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Eléctrico CAT</span></div>
-                <img src="Vibrador.jpg" alt="Vibrador Amarillo" class="card-img">
-                <div class="card-price-tag">$300 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> <span>Compactación uniforme de losas.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Acabado profesional libre de burbujas.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Motor de alta frecuencia y durabilidad.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador Eléctrico CAT ($300)')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Portátil V1</span></div>
-                <img src="vibrador1.jpg" alt="Vibrador 1" class="card-img">
-                <div class="card-price-tag">$300 <small style="font-size: 0.5em;">X DÍA</small></div>
-                <div class="flete-info">Flete se calcula según ubicación</div>
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> <span>Diseño ligero ideal para castillos.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Manejo ágil en espacios reducidos.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Garantiza la integridad de la mezcla.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador Portátil V1 ($300)')" class="btn-cotizar">Cotizar Renta</button>
                 </div>
             </div>
         </div>
@@ -370,7 +191,11 @@
         </div>
         <div>
             <h4>Horarios de Atención</h4>
-            <p>Lun-Vie: 8am-8pm | Sáb: 9am-5pm | Dom: 9am-2pm</p>
+            <ul class="footer-horarios">
+                <li>Lunes a Viernes: 8:00 am - 8:00 pm</li>
+                <li>Sábado: 9:00 am - 5:00 pm</li>
+                <li>Domingo: 9:00 am - 2:00 pm</li>
+            </ul>
         </div>
     </footer>
 
