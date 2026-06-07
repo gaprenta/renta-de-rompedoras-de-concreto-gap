@@ -31,24 +31,30 @@
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* HEADER REFACTORIZADO PARA CONTROLAR EL TAMAÑO EN MÓVILES */
+        /* HEADER ORIGINAL CON EL LEMA DE LAS SIGLAS AGREGADO */
         header { 
             background: #000000; 
             width: 100%; 
             overflow: hidden; 
             border-bottom: 8px solid #002752; 
-            padding: 10px 0; /* Un espacio limpio arriba y abajo */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 15px 0;
+            text-align: center;
         }
         .header-logo-img { 
-            width: 90%; 
-            max-width: 450px; /* Evita que en pantallas grandes se desparrame */
-            max-height: 120px; /* CONTROL ESTRICTO: No abarca media pantalla en celulares */
+            width: 100%; 
+            max-width: 600px; 
             height: auto; 
             display: block; 
-            object-fit: contain; 
+            margin: 0 auto;
+        }
+        /* Texto elegante y visible para el significado de GAP justo debajo del logo */
+        .significado-gap {
+            color: #FFCD00;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-family: 'Arial Black', sans-serif;
         }
 
         .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; }
@@ -57,16 +63,6 @@
         
         .sobre-gap { padding: 40px 20px; max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Arial', sans-serif; color: #333; }
         .sobre-gap h3 { color: #002752; font-size: 24px; text-transform: uppercase; }
-
-        /* NUEVA SECCIÓN DE MISIÓN, VISIÓN Y VALORES */
-        .identidad-gap { background: #fff; padding: 40px 20px; border-top: 1px solid #eee; }
-        .identidad-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .identidad-card { border: 3px solid #002752; padding: 25px; text-align: center; border-radius: 6px; background: #fff; font-family: 'Arial', sans-serif; }
-        .identidad-card h4 { color: #002752; font-size: 20px; margin-top: 0; text-transform: uppercase; font-family: 'Arial Black', sans-serif; }
-        .identidad-card p { color: #444; line-height: 1.5; font-size: 15px; margin-bottom: 0; }
-        .valores-lista { list-style: none; padding: 0; margin: 0; font-weight: bold; text-align: left; display: inline-block; }
-        .valores-lista li { margin-bottom: 8px; color: #000; }
-        .valores-lista strong { color: #002752; font-family: 'Arial Black', sans-serif; }
 
         .politicas-renta { background: #f9f9f9; padding: 30px 20px; border-top: 4px solid #FFCD00; border-bottom: 4px solid #FFCD00; }
         .politicas-container { max-width: 900px; margin: 0 auto; font-family: 'Arial', sans-serif; color: #000; }
@@ -112,7 +108,8 @@
 <body>
 
     <header>
-        <img src="logotipo3.jpg" alt="Logo G-A-P" class="header-logo-img">
+        <img src="logotipo.jpg" alt="Logo G-A-P" class="header-logo-img">
+        <div class="significado-gap">Gestión • Activos • Puntualidad</div>
     </header>
 
     <section class="nosotros">
@@ -123,27 +120,6 @@
     <section class="sobre-gap">
         <h3>¿Quiénes somos?</h3>
         <p>En <strong>G-A-P</strong> nos dedicamos a facilitar tus proyectos de construcción y remodelación. Somos una empresa comprometida con la <strong>puntualidad y la potencia</strong>, ofreciendo equipos en óptimas condiciones mecánicas.</p>
-    </section>
-
-    <section class="identidad-gap">
-        <div class="identidad-container">
-            <div class="identidad-card">
-                <h4>Misión</h4>
-                <p>Proveer soluciones eficientes en el alquiler de equipo ligero para la construcción, garantizando herramientas potentes y un servicio confiable que mantenga tus obras en marcha sin interrupciones.</p>
-            </div>
-            <div class="identidad-card">
-                <h4>Visión</h4>
-                <p>Consolidarnos como el referente número uno en renta de rompedoras y equipo ligero en toda la zona metropolitana de Monterrey, distinguidos por la excelencia operativa y la atención inmediata.</p>
-            </div>
-            <div class="identidad-card">
-                <h4>Valores (G-A-P)</h4>
-                <ul class="valores-lista">
-                    <li><strong>G</strong>estión Eficiente</li>
-                    <li><strong>A</strong>ctivos de Alta Calidad</li>
-                    <li><strong>P</strong>untualidad Garantizada</li>
-                </ul>
-            </div>
-        </div>
     </section>
 
     <section class="politicas-renta">
@@ -235,7 +211,7 @@
             <div class="card">
                 <div class="card-header-kg"><span class="modelo-txt">10 KG SDS MAX (V2)</span> <span class="badge-tipo">TRABAJO LIGERO</span></div>
                 <img src="12.png" alt="Rompedora 10kg SDS MAX" class="card-img">
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
+                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede ID variar según disponibilidad</div>
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> <span>Remoción de estructuras y concreto firme.</span></li>
@@ -341,95 +317,4 @@
                     <ul class="ideal-list">
                         <li><span class="icon-usage-v">GAP</span> <span>Compactación uniforme de losas.</span></li>
                         <li><span class="icon-usage-v">GAP</span> <span>Acabado profesional libre de burbujas.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Motor de alta frecuencia y durabilidad.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador Eléctrico CAT')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header-vibrador"><span class="modelo-txt">Vibrador Portátil V1</span></div>
-                <img src="vibrador1.jpg" alt="Vibrador 1" class="card-img">
-                <div class="disponibilidad-txt">Al momento de la entrega el equipo puede variar según disponibilidad</div>
-                <div class="card-body">
-                    <ul class="ideal-list">
-                        <li><span class="icon-usage-v">GAP</span> <span>Diseño ligero ideal para castillos.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Manejo ágil en espacios reducidos.</span></li>
-                        <li><span class="icon-usage-v">GAP</span> <span>Garantiza la integridad de la mezcla.</span></li>
-                    </ul>
-                    <button onclick="abrirModal('Vibrador Portátil V1')" class="btn-cotizar">Cotizar Renta</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div id="modalCotizacion" class="modal">
-        <div class="modal-content">
-            <h3>Solicitud de Cotización</h3>
-            <p id="equipoTxt" style="font-weight: bold; color: #002752;"></p>
-            <input type="text" id="nombre" placeholder="Nombre completo">
-            <input type="text" id="direccion" placeholder="Dirección exacta (Calle y Número)">
-            <input type="text" id="colonia" placeholder="Colonia">
-            <input type="text" id="municipio" placeholder="Municipio">
-            <input type="tel" id="telefono" placeholder="Teléfono">
-            <input type="text" id="dias" placeholder="¿Cuántos días ocupas el equipo?">
-            <input type="text" id="trabajo" placeholder="¿Qué trabajo vas a realizar?">
-            <div class="modal-btns">
-                <button class="btn-close" onclick="cerrarModal()">RECHAZAR</button>
-                <button class="btn-send" onclick="enviarWhatsapp()">CONTINUAR</button>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer-info">
-        <div>
-            <h4>Zonas de Cobertura</h4>
-            <p>Juárez | Guadalupe | Apodaca | San Nicolás | Monterrey | Cadereyta</p>
-        </div>
-        <div>
-            <h4>Redes Sociales</h4>
-            <p><a href="https://www.facebook.com/gaprentaderompedoras" target="_blank" style="color: #FFCD00;">Síguenos en Facebook</a></p>
-        </div>
-        <div>
-            <h4>Horarios de Atención</h4>
-            <div style="line-height: 1.8;">
-                Lunes a Viernes: 8:00 am - 8:00 pm<br>
-                Sábado: 9:00 am - 5:00 pm<br>
-                Domingo: 9:00 am - 2:00 pm
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/528119988053" class="ws-flotante" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-
-    <script>
-        let equipoSeleccionado = "";
-        function abrirModal(nombreEquipo) {
-            equipoSeleccionado = nombreEquipo;
-            document.getElementById('equipoTxt').innerText = "Equipo: " + nombreEquipo;
-            document.getElementById('modalCotizacion').style.display = 'block';
-        }
-        function cerrarModal() {
-            document.getElementById('modalCotizacion').style.display = 'none';
-        }
-        function enviarWhatsapp() {
-            const nom = document.getElementById('nombre').value;
-            const dir = document.getElementById('direccion').value;
-            const col = document.getElementById('colonia').value;
-            const mun = document.getElementById('municipio').value;
-            const tel = document.getElementById('telefono').value;
-            const dia = document.getElementById('dias').value;
-            const tra = document.getElementById('trabajo').value;
-            if(nom == "" || dir == "" || col == "" || mun == "" || tel == "" || dia == "" || tra == "") {
-                alert("Por favor completa todos los datos para brindarte el equipo adecuado.");
-                return;
-            }
-            const mensaje = `Hola GAP, me interesa cotizar una renta.%0A%0A*Equipo:* ${equipoSeleccionado}%0A*Nombre:* ${nom}%0A*Dirección:* ${dir}%0A*Colonia:* ${col}%0A*Municipio:* ${mun}%0A*Teléfono:* ${tel}%0A*Días requeridos:* ${dia}%0A*Trabajo:* ${tra}`;
-            window.open(`https://wa.me/528119988053?text=${mensaje}`, '_blank');
-            cerrarModal();
-        }
-    </script>
-</body>
-</html>
+                        <li><span class="icon-usage-
