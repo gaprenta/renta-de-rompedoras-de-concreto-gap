@@ -30,8 +30,9 @@
     
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
-        header { background: #FFCD00; width: 100%; overflow: hidden; border-bottom: 8px solid #002752; }
-        .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
+        /* Ajuste sutil en el fondo del header por si la imagen tiene variaciones de tono oscuro */
+        header { background: #000000; width: 100%; overflow: hidden; border-bottom: 8px solid #002752; }
+        .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; object-fit: contain; }
         .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
@@ -78,7 +79,7 @@
 <body>
 
     <header>
-        <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
+        <img src="logotipo2.jpg" alt="Logo G-A-P" class="header-logo-img">
     </header>
 
     <section class="nosotros">
@@ -93,7 +94,7 @@
 
     <section class="politicas-renta">
         <div class="politicas-container">
-            <h3>Condiciones de Servicio</h3>
+            <h3>Conditions de Servicio</h3>
             <div class="politicas-grid">
                 <div class="politica-item">
                     <strong>Requisito Obligatorio</strong>
