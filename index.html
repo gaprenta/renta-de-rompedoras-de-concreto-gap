@@ -30,9 +30,46 @@
     
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
-        header { background: #FFCD00; width: 100%; overflow: hidden; border-bottom: 8px solid #002752; }
-        .header-logo-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; }
-        .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; }
+        
+        /* Ajustes de estilización del Header (Toque especial sin rectángulos rígidos) */
+        header { 
+            background: #ffffff; 
+            width: 100%; 
+            padding: 20px 0 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-bottom: 6px solid #FFCD00;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: #002752;
+        }
+        .header-logo-img { 
+            width: 100%; 
+            max-width: 450px; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+        }
+        .header-tagline {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #002752;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-spacing: 4px;
+        }
+
+        .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; margin-top: 6px; }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
         .sobre-gap { padding: 40px 20px; max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Arial', sans-serif; color: #333; }
@@ -79,6 +116,7 @@
 
     <header>
         <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
+        <div class="header-tagline">• Gestión • Asesoría • Puntualidad</div>
     </header>
 
     <section class="nosotros">
