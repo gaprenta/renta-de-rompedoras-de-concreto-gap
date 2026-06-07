@@ -58,8 +58,8 @@
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; font-family: 'Arial', sans-serif; }
         .ideal-list { list-style: none; padding: 0; margin: 15px 0 25px 0; font-weight: bold; }
         .ideal-list li { display: flex; align-items: flex-start; margin-bottom: 12px; line-height: 1.4; text-align: left; }
-        .icon-usage { color: #fff; background: #002752; padding: 2px 8px; border-radius: 3px; margin-right: 15px; flex-shrink: 0; }
-        .icon-usage-v { color: #000; background: #FFCD00; padding: 2px 8px; border-radius: 3px; margin-right: 15px; flex-shrink: 0; }
+        .icon-usage { color: #002752; background: transparent; padding: 0; margin-right: 10px; flex-shrink: 0; }
+        .icon-usage-v { color: #002752; background: transparent; padding: 0; margin-right: 10px; flex-shrink: 0; }
         .btn-cotizar { cursor: pointer; display: block; border: none; width: 100%; background: #002752; color: #FFCD00; text-align: center; padding: 18px; font-weight: 900; text-transform: uppercase; font-size: 1.1em; }
         .btn-cotizar:hover { background: #001a38; }
         .modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
@@ -71,14 +71,14 @@
         .btn-close { background: #d9534f; color: white; flex: 1; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
         .footer-info { background: #000; color: #fff; padding: 60px 20px 120px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
         .ws-flotante { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .ws-flotante:hover { transform: scale(1.1); }
         .ws-flotante img { width: 35px; height: 35px; }
     </style>
 </head>
 <body>
 
-    <header>
+    <header style="text-align: center; padding-bottom: 10px;">
         <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
+        <div style="color: #002752; font-size: 16px; font-family: 'Arial', sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 4px; margin-top: -5px; margin-bottom: 5px;">Gestión · Asesoría · Puntualidad</div>
     </header>
 
     <section class="nosotros">
@@ -88,7 +88,7 @@
 
     <section class="sobre-gap">
         <h3>¿Quiénes somos?</h3>
-        <p>En <strong>G-A-P</strong> nos dedicamos a facilitar tus proyectos de construcción y remodelación. Somos una empresa comprometida con la <strong>puntualidad y la potencia</strong>, ofreciendo equipos en óptimas condiciones mecánicas.</p>
+        <p>En <strong>G-A-P (Gestión · Asesoría · Puntualidad)</strong> nos dedicamos a facilitar tus proyectos de construcción y remodelación. Somos una empresa comprometida con la potencia y el servicio, offering equipos en óptimas condiciones mecánicas.</p>
     </section>
 
     <section class="politicas-renta">
@@ -198,7 +198,7 @@
                 <div class="card-body">
                     <ul class="ideal-list">
                         <li><span class="icon-usage">GAP</span> <span>Demolición de banquetas, pisos y losas.</span></li>
-                        <li><span class="icon-usage">GAP</span> <span>Excavaciones para drenajes y zapatas.</span></li>
+                        <li><span class="icon-usage">GAP</span> <span>Excavaciones para drenajes and zapatas.</span></li>
                         <li><span class="icon-usage">GAP</span> <span>Potencia bruta para estructuras pesadas.</span></li>
                     </ul>
                     <button onclick="abrirModal('Rompedora de 15-20kg V1')" class="btn-cotizar">Cotizar Renta</button>
