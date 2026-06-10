@@ -33,7 +33,7 @@
         
         /* Ajustes de estilización del Header (Toque especial sin rectángulos rígidos) */
         header { 
-            background: #ffffff; 
+            background: #f4f6f9; /* Cambio de fondo solicitado */
             width: 100%; 
             padding: 20px 0 15px 0;
             text-align: center;
@@ -63,10 +63,20 @@
             font-size: 16px;
             font-weight: bold;
             color: #002752;
-            margin-top: 12px;
+            margin-top: 15px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            word-spacing: 4px;
+            letter-spacing: 1px;
+        }
+        /* Toque especial y estilizado para destacar las palabras clave de GAP */
+        .pilar-gap {
+            background: #FFCD00;
+            color: #002752;
+            padding: 4px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: 900;
         }
 
         .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; margin-top: 6px; }
@@ -116,7 +126,12 @@
 
     <header>
         <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
-        <div class="header-tagline">• Gestión • Asesoría • Puntualidad</div>
+        <!-- Se aplica el toque especial a los pilares de la marca individuales y sin rectángulos rígidos generales -->
+        <div class="header-tagline">
+            <span class="pilar-gap">Gestión</span>
+            <span class="pilar-gap">Asesoría</span>
+            <span class="pilar-gap">Puntualidad</span>
+        </div>
     </header>
 
     <section class="nosotros">
@@ -131,7 +146,7 @@
 
     <section class="politicas-renta">
         <div class="politicas-container">
-            <h3>Condiciones de Servicio</h3>
+            <h3>Conditions de Servicio</h3>
             <div class="politicas-grid">
                 <div class="politica-item">
                     <strong>Requisito Obligatorio</strong>
