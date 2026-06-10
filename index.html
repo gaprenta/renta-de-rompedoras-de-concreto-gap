@@ -31,24 +31,13 @@
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* Ajustes de estilización del Header (Toque especial sin rectángulos rígidos) */
+        /* Ajustes del Header - Fondo azul, sin líneas ni recuadros rígidos en GAP */
         header { 
-            background: #f4f6f9; /* Cambio de fondo solicitado */
+            background: #002752; /* Fondo azul para el logotipo */
             width: 100%; 
-            padding: 20px 0 15px 0;
+            padding: 30px 0 25px 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-bottom: 6px solid #FFCD00;
-            position: relative;
-        }
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: #002752;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         .header-logo-img { 
             width: 100%; 
@@ -56,27 +45,30 @@
             height: auto; 
             display: block; 
             margin: 0 auto; 
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
         }
         .header-tagline {
             font-family: 'Arial', sans-serif;
             font-size: 16px;
             font-weight: bold;
-            color: #002752;
-            margin-top: 15px;
+            margin-top: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        /* Toque especial y estilizado para destacar las palabras clave de GAP */
-        .pilar-gap {
-            background: #FFCD00;
-            color: #002752;
-            padding: 4px 14px;
-            border-radius: 20px;
-            display: inline-block;
-            margin: 0 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Estilo tipo botones modernos para Gestión, Asesoría y Puntualidad */
+        .boton-pilar {
+            background: #003a7a; /* Fondo azul más claro para resaltar en el header */
+            color: #FFCD00;      /* Texto en color amarillo */
+            padding: 8px 20px;
+            border-radius: 50px; /* Bordes redondeados modernos */
+            border: 2px solid #FFCD00; /* Borde delgado para definir el botón */
             font-weight: 900;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
         }
 
         .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; margin-top: 6px; }
@@ -126,11 +118,10 @@
 
     <header>
         <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
-        <!-- Se aplica el toque especial a los pilares de la marca individuales y sin rectángulos rígidos generales -->
         <div class="header-tagline">
-            <span class="pilar-gap">Gestión</span>
-            <span class="pilar-gap">Asesoría</span>
-            <span class="pilar-gap">Puntualidad</span>
+            <span class="boton-pilar">Gestión</span>
+            <span class="boton-pilar">Asesoría</span>
+            <span class="boton-pilar">Puntualidad</span>
         </div>
     </header>
 
@@ -146,7 +137,7 @@
 
     <section class="politicas-renta">
         <div class="politicas-container">
-            <h3>Conditions de Servicio</h3>
+            <h3>Condiciones de Servicio</h3>
             <div class="politicas-grid">
                 <div class="politica-item">
                     <strong>Requisito Obligatorio</strong>
