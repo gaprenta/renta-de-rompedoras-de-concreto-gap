@@ -31,58 +31,24 @@
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* Ajustes de la Portada / Header */
+        /* Ajuste del Header para la Portada con fondo claro */
         header { 
-            background: #002752; 
+            background: #fdfdfd; 
             width: 100%; 
-            padding: 20px 0 20px 0;
+            padding: 10px 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
-        /* Contenedor e Imagen de la Portada */
-        .portada-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
         .portada-img { 
             width: 100%; 
+            max-width: 750px; 
             height: auto; 
-            max-height: 500px;
-            object-fit: contain;
             display: block; 
             margin: 0 auto; 
-            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
         }
 
-        .header-tagline {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        /* Estilo tipo botones modernos para Gestión, Asesoría y Puntualidad */
-        .boton-pilar {
-            background: #003a7a; 
-            color: #FFCD00;      
-            padding: 8px 20px;
-            border-radius: 50px; 
-            border: 2px solid #FFCD00; 
-            font-weight: 900;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-
-        .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; margin-top: 6px; }
+        .nosotros { background: #002752; color: #fff; padding: 50px 20px; text-align: center; }
         .nosotros h2 { color: #FFCD00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 28px; }
         .nosotros p { max-width: 850px; margin: 0 auto; line-height: 1.6; font-size: 19px; font-family: 'Arial', sans-serif; font-weight: bold; }
         .sobre-gap { padding: 40px 20px; max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Arial', sans-serif; color: #333; }
@@ -128,15 +94,7 @@
 <body>
 
     <header>
-        <div class="portada-container">
-            <!-- Portada GAP Renta de Rompedoras -->
-            <img src="portada.jpg" alt="GAP Renta de Rompedoras de Concreto" class="portada-img">
-        </div>
-        <div class="header-tagline">
-            <span class="boton-pilar">Gestión</span>
-            <span class="boton-pilar">Asesoría</span>
-            <span class="boton-pilar">Puntualidad</span>
-        </div>
+        <img src="portada.jpg" alt="GAP Renta de Rompedoras" class="portada-img">
     </header>
 
     <section class="nosotros">
