@@ -31,22 +31,33 @@
     <style>
         body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background: #fff; color: #000; }
         
-        /* Ajustes del Header - Fondo azul, sin líneas ni recuadros rígidos en GAP */
+        /* Ajustes de la Portada / Header */
         header { 
-            background: #002752; /* Fondo azul para el logotipo */
+            background: #002752; 
             width: 100%; 
-            padding: 30px 0 25px 0;
+            padding: 20px 0 20px 0;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-        .header-logo-img { 
+        
+        /* Contenedor e Imagen de la Portada */
+        .portada-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .portada-img { 
             width: 100%; 
-            max-width: 450px; 
             height: auto; 
+            max-height: 500px;
+            object-fit: contain;
             display: block; 
             margin: 0 auto; 
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
         }
+
         .header-tagline {
             font-family: 'Arial', sans-serif;
             font-size: 16px;
@@ -61,11 +72,11 @@
         }
         /* Estilo tipo botones modernos para Gestión, Asesoría y Puntualidad */
         .boton-pilar {
-            background: #003a7a; /* Fondo azul más claro para resaltar en el header */
-            color: #FFCD00;      /* Texto en color amarillo */
+            background: #003a7a; 
+            color: #FFCD00;      
             padding: 8px 20px;
-            border-radius: 50px; /* Bordes redondeados modernos */
-            border: 2px solid #FFCD00; /* Borde delgado para definir el botón */
+            border-radius: 50px; 
+            border: 2px solid #FFCD00; 
             font-weight: 900;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             transition: transform 0.2s;
@@ -117,7 +128,10 @@
 <body>
 
     <header>
-        <img src="logotipo1.png" alt="Logo G-A-P" class="header-logo-img">
+        <div class="portada-container">
+            <!-- Portada GAP Renta de Rompedoras -->
+            <img src="portada.jpg" alt="GAP Renta de Rompedoras de Concreto" class="portada-img">
+        </div>
         <div class="header-tagline">
             <span class="boton-pilar">Gestión</span>
             <span class="boton-pilar">Asesoría</span>
